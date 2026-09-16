@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A1633;font-family:'Instrument Sans',system-ui,sans-serif}
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<section data-label="Cover" data-speaker-notes="DBP: multi-tenant BSS/monetization platform on TM Forum Open APIs. The demo covers all five surfaces with one continuous story: Aurora Retail buys, Trackwise fulfills and settles, Bergnet resells." style="background:linear-gradient(180deg,#0A1633 0%,#0D1B3E 65%,#12244E 100%);color:#fff;display:flex;flex-direction:column;padding:100px 120px;position:relative;overflow:hidden">
+  <div style="position:absolute;right:-200px;top:-260px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(46,108,255,.22),transparent 65%)"></div>
+  <div style="display:flex;align-items:center;gap:16px;position:relative">
+    <div style="width:52px;height:52px;border-radius:12px;background:#fff;color:#0D1B3E;display:grid;place-items:center;font:800 26px 'Schibsted Grotesk',sans-serif">N</div>
+    <div style="font:700 28px 'Schibsted Grotesk',sans-serif">Digital Business Platform</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;max-width:1300px">
+    <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:10px 22px;font-size:24px;font-weight:600;color:#9FC0FF;letter-spacing:.06em;align-self:flex-start;margin-bottom:36px">B2B DIGITAL COMMERCE · TM FORUM OPEN APIs · MULTI-TENANT</div>
+    <h1 style="font:800 92px/1.08 'Schibsted Grotesk',sans-serif;margin:0 0 28px;letter-spacing:-.015em">Selling complex telco solutions,<br>as simple as a marketplace.</h1>
+    <p style="font-size:30px;line-height:1.5;color:#AAB6D4;margin:0;max-width:1050px">A monetization and partner-ecosystem platform for tier-1/tier-2 operators: package own and third-party services, sell them online, and settle with every partner.</p>
+  </div>
+  <div style="display:flex;gap:48px;font-size:24px;color:#7E8CB0;position:relative">
+    <span>Solution proposal · v1 demo</span><span style="margin-left:auto">July 2026</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2: PROBLEM STATEMENT ============ -->
+<section data-label="Problem" data-speaker-notes="The problem is two-sided: for the operator, slow time-to-market and no way to monetize the ecosystem; for the B2B customer, an opaque manual buying experience. Legacy BSS was never designed for multi-provider catalogs." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:90px 120px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:18px">01 · PROBLEM STATEMENT</div>
+  <h2 style="font:800 62px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 56px;letter-spacing:-.015em">B2B telco is growing into 5G, IoT and Edge —<br>but the selling model is still manual.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;flex:1">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:44px 40px;display:flex;flex-direction:column;gap:18px">
+      <div style="width:64px;height:64px;border-radius:16px;background:#FBE1DF;display:grid;place-items:center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg></div>
+      <div style="font:700 32px 'Schibsted Grotesk',sans-serif">Slow time-to-market</div>
+      <div style="font-size:24px;line-height:1.55;color:#5A6478">Launching an offer or bundle takes months of legacy BSS changes. 5G / IoT / Edge opportunities reach the market late — or never.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:44px 40px;display:flex;flex-direction:column;gap:18px">
+      <div style="width:64px;height:64px;border-radius:16px;background:#FDF2D9;display:grid;place-items:center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
+      <div style="font:700 32px 'Schibsted Grotesk',sans-serif">Unmonetized ecosystem</div>
+      <div style="font-size:24px;line-height:1.55;color:#5A6478">The solutions customers need combine operator services with partner products — but there is no industrial way to onboard, co-sell and settle with those partners.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:44px 40px;display:flex;flex-direction:column;gap:18px">
+      <div style="width:64px;height:64px;border-radius:16px;background:#EAF0FE;display:grid;place-items:center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1A56DB" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></div>
+      <div style="font:700 32px 'Schibsted Grotesk',sans-serif">Opaque B2B buying</div>
+      <div style="font-size:24px;line-height:1.55;color:#5A6478">Enterprise buyers want to discover, configure and buy online. Today: catalogs in technical jargon, quotes over email, weeks of waiting.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:30px 44px;margin-top:40px;display:flex;align-items:center;gap:24px">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:26px;line-height:1.45;color:#fff"><b>The opportunity:</b> headless commerce on TM Forum Open APIs — one multi-provider catalog, an AI-guided buying experience, and native partner settlement.</div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2B: CURRENT-STATE REFERENCE CASE ============ -->
+<section data-label="Reference case · current state" data-speaker-notes="Real operator case: partner-mediated B2B model with Microsoft-type digital partners. Operator stays out of the middle — client deals directly with the partner for subscription and catalog info. Six stages run end-to-end today, largely via manual tasks, email and file drops, with no unified inventory of what the client actually has active." style="background:#0A1633;padding:76px 100px;color:#fff">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9FC0FF;margin-bottom:18px">REFERENCE CASE · CURRENT STATE</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 14px;letter-spacing:-.015em">How a tier-1 operator runs this today — without a DBP</h2>
+  <p style="font:400 24px/1.5 'Instrument Sans',sans-serif;color:#AAB6D4;margin:0 0 40px;max-width:1400px">A live B2B large-account case with a digital partner (Microsoft-type catalog). The operator deliberately stays out of the middle: the client subscribes and self-manages directly with the partner. Six stages, mostly manual, stitch the relationship together end-to-end.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:24px 26px">
+      <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">01 · Partner onboarding</div>
+      <div style="font-size:24px;line-height:1.45;color:#DCE2F2">Marketing negotiates PVP price list, categories and discount level per partner. Billable concepts created manually in billing, one per category.</div>
+      <div style="margin-top:14px;font-size:24px;font-weight:700;letter-spacing:.02em;color:#7C8BB0">MANUAL NEGOTIATION</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:24px 26px">
+      <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">02 · Product onboarding / mod.</div>
+      <div style="font-size:24px;line-height:1.45;color:#DCE2F2">Partner catalog published on its own site or handed to marketing. Client discount per category loaded by hand into the master catalog repository.</div>
+      <div style="margin-top:14px;font-size:24px;font-weight:700;letter-spacing:.02em;color:#7C8BB0">MANUAL LOAD</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:24px 26px">
+      <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">03 · Fulfillment (A/M/D)</div>
+      <div style="font-size:24px;line-height:1.45;color:#DCE2F2">Client subscribes, modifies or cancels directly in the partner's console (or via care, who impersonates the client). No inventory held on the operator side.</div>
+      <div style="margin-top:14px;font-size:24px;font-weight:700;letter-spacing:.02em;color:#7C8BB0">API / CONSOLE SSO / EMAIL</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:24px 26px">
+      <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">04 · Invoicing to client</div>
+      <div style="font-size:24px;line-height:1.45;color:#DCE2F2">Partner sends a monthly file with amounts per client/item. Operator applies the agreed discount, injects charges into billing, publishes the client detail file.</div>
+      <div style="margin-top:14px;font-size:24px;font-weight:700;letter-spacing:.02em;color:#7C8BB0">SFTP / API FILE</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:24px 26px">
+      <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">05 · Care / tech post-sale</div>
+      <div style="font-size:24px;line-height:1.45;color:#DCE2F2">Care triages telco vs. partner issues, escalates partner incidents, and can impersonate the client inside the partner's console. No proactive monitoring.</div>
+      <div style="margin-top:14px;font-size:24px;font-weight:700;letter-spacing:.02em;color:#7C8BB0">TRIAGE + ESCALATION</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:24px 26px">
+      <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">06 · Settlement</div>
+      <div style="font-size:24px;line-height:1.45;color:#DCE2F2">Same billing file doubles as the payout basis, so reconciliation is largely automatic — but disputes, margin analysis and price-list changes are handled by hand.</div>
+      <div style="margin-top:14px;font-size:24px;font-weight:700;letter-spacing:.02em;color:#7C8BB0">FILE-BASED RECONCILIATION</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:14px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);font-size:24px;color:#AAB6D4">
+    <span style="width:12px;height:12px;border-radius:4px;background:#9FC0FF;flex-shrink:0"></span>
+    No unified inventory, no single console, no orchestration — each handoff is its own file, email or manual task.
+  </div>
+</section>
+
+<!-- ============ GAP SLIDES: TODAY VS DBP, PER PROCESS ============ -->
+<section data-label="Gap · Partner onboarding" data-speaker-notes="Today: bilateral negotiation, manual price list load, IT ticket per billing concept — weeks. With DBP: partner self-registers, structured terms, approval workflow, catalog synced automatically — days." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · 01 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Partner onboarding</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · MANUAL</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>Marketing bilaterally negotiates the PVP price list, categories and discount level with each partner.</li>
+        <li>IT ticket required to create one billable concept per category in billing.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Weeks per partner, IT-dependent</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>Partner self-registers in the Partner Hub: compliance docs, price list and revenue-share terms in one structured application.</li>
+        <li>Built-in approval workflow — no bespoke IT ticket to stand up billing concepts.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">Days per partner, self-serve</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Locked-in categories.</b> Renegotiating a partner's category taxonomy later is slow, costly and can ripple through the portfolio.</div>
+      <div><b>Uneven partner readiness.</b> Without API compliance, onboarding cost and timeline balloon per partner.</div>
+      <div><b>No structured record.</b> Informal terms are hard to audit or scale across a growing partner base.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> a bilateral, IT-dependent negotiation collapses into a self-serve, workflow-governed application.</div>
+  </div>
+</section>
+
+<section data-label="Gap · Product onboarding/mod" data-speaker-notes="Today: partner catalog handed over informally, client discounts loaded by hand. With DBP: structured TMF620 catalog, floor-price and revenue-split enforced automatically, instant publish." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · 02 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Product onboarding &amp; modification</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · MANUAL</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>Partner publishes its PVP list on its own site, or hands it to marketing to post manually.</li>
+        <li>Client-specific discount per category loaded by hand into the master catalog repository.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Spreadsheet loads, no governance</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>Partner publishes a structured product catalog (TMF620) directly in the Partner Hub.</li>
+        <li>Offer Studio enforces partner floor price and revenue split — published bundles go live to the Shopfront immediately.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">Structured catalog, instant publish</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>PVP can change unilaterally.</b> The partner controls its price list with zero operator control over timing or level.</div>
+      <div><b>Category-only granularity.</b> Discounts can't be tailored per item, limiting competitive pricing flexibility.</div>
+      <div><b>Manual load = drift.</b> Client-specific discounts can fall out of sync with what actually gets billed.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> hand-carried price sheets become one governed catalog, live the moment it's approved.</div>
+  </div>
+</section>
+
+<section data-label="Gap · Fulfillment" data-speaker-notes="Today: client self-serves in the partner console with no operator-side inventory or SLA visibility. With DBP: unified fulfillment queue with SLA timers and AI root-cause suggestions." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · 03 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Fulfillment — add, modify, delete</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · MANUAL</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>Client subscribes, changes or cancels in the partner's own console — or calls care, who impersonates the client.</li>
+        <li>No inventory of active items held on the operator side, and no SLA visibility.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Blind to the operator, no SLA</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>Unified order &amp; fulfillment queue in the Partner Hub, with SLA timers on every request.</li>
+        <li>Customer tracks the same order in Customer 360; AI root-cause suggestions surface on stalled tasks.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">Shared visibility, SLA-managed</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Console quality varies.</b> A weak partner console pushes the whole workload onto care, case by case.</div>
+      <div><b>Zero operator inventory.</b> The operator can't confirm what's active without asking the partner directly.</div>
+      <div><b>Speed expectations unmet.</b> Clients expect fast changes; manual hops can't reliably guarantee that.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> an invisible handoff to the partner becomes one tracked order, visible to both sides.</div>
+  </div>
+</section>
+
+<section data-label="Gap · Invoicing to client" data-speaker-notes="Today: monthly file, manual discount application, manual charge injection. With DBP: automated settlement pipeline feeding a single, explainable customer invoice." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · 04 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Invoicing to the client</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · MANUAL</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>Partner delivers one monthly file per client/item, via SFTP or API, on its own schedule.</li>
+        <li>Operator manually applies the discount and injects one charge per category into billing.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Monthly batch, error-prone</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>Usage and billing events flow automatically into the settlement engine, rules applied at charge time.</li>
+        <li>Client sees one consolidated invoice in Customer 360, with Bill Analyzer explaining every line.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">Automated, explainable, on cycle</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Single point of failure.</b> One late or malformed partner file skips the whole billing cycle.</div>
+      <div><b>Fallback rules mask errors.</b> Unmapped categories default alphabetically, risking silent misbilling.</div>
+      <div><b>No independent validation.</b> The operator largely trusts the partner's reported figures as-is.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> a fragile monthly file hand-off becomes a continuous, rule-driven billing pipeline.</div>
+  </div>
+</section>
+
+<section data-label="Gap · Care/technical post-sale" data-speaker-notes="Today: care triages manually and escalates by email with no proactive monitoring. With DBP: unified ticketing, API-driven escalation, AI-assisted triage, proactive monitoring hooks." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · 05 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Care &amp; technical post-sale</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · MANUAL</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>Care manually triages telco vs. partner issues, then escalates to the partner by email or portal ticket.</li>
+        <li>Care must impersonate the client in the partner console just to see contracted items.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Manual triage, blind spots</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>Unified ticketing across own and partner services, with AI-assisted triage at intake.</li>
+        <li>Escalation fires via API, tracked in the same ticket; monitoring hooks flag issues proactively.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">Integrated, proactive, AI-assisted</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Multi-hop escalation.</b> Client → care → partner adds latency to every partner-side issue.</div>
+      <div><b>No proactive detection.</b> Problems surface only after the client calls in.</div>
+      <div><b>Limited internal visibility.</b> Care can't see contracted items without impersonating the client.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> siloed, reactive support becomes one ticket, one view, proactive by default.</div>
+  </div>
+</section>
+
+<section data-label="Gap · Settlement" data-speaker-notes="Today: reconciliation piggybacks on the billing file; disputes and margin analysis are manual. With DBP: automated statements, dispute workflow, live margin dashboards." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · 06 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Settlement</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · MANUAL</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>The same billing file doubles as the payout basis, so basic reconciliation is close to automatic.</li>
+        <li>Disputes, margin analysis and PVP price-list changes are all handled by hand, case by case.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Ad hoc reconciliation, no dashboard</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>Settlement module auto-calculates revenue share per agreement and generates self-billing statements.</li>
+        <li>Built-in dispute workflow, plus live margin and performance dashboards per client/partner.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">Automated statements, live margin</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Manual re-pricing.</b> Fixed-price clients need hand-recalculated discounts every time PVP changes.</div>
+      <div><b>Margin is retroactive.</b> True margin per client is only knowable after reconciliation runs.</div>
+      <div><b>Disputes handled ad hoc.</b> No structured workflow — resolution relies on partner goodwill and evidence.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> file-based reconciliation becomes real revenue-share automation with a live margin view.</div>
+  </div>
+</section>
+
+<!-- ============ MICROSOFT/INFITERRA SCENARIO ============ -->
+<section data-label="Reference case · Microsoft via Infiterra" data-speaker-notes="A second live scenario: Microsoft is not managed like a generic digital partner — it runs through Infiterra, a CSP management SaaS, via direct API integration. Ciebercloud (the operator's app, in AWS with SSO) talks to both Infiterra and Microsoft Partner Center by API for data sync, provisioning, CSP management, licenses and data retrieval." style="background:#0A1633;padding:60px 100px;color:#fff">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9FC0FF;margin-bottom:14px">REFERENCE CASE · SECOND SCENARIO</div>
+  <h2 style="font:800 44px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 14px;letter-spacing:-.015em">Microsoft isn't run like a generic partner — it goes through Infiterra</h2>
+  <p style="font:400 24px/1.45 'Instrument Sans',sans-serif;color:#AAB6D4;margin:0 0 24px;max-width:1600px">Two integration models coexist today. Generic digital partners follow the file/email-driven process just covered. Microsoft runs through Infiterra, a CSP management SaaS, which holds a direct API integration with Microsoft Partner Center — a materially more automated path.</p>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+    <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:14px 32px;text-align:center">
+      <div style="font:800 24px 'Schibsted Grotesk',sans-serif">Ciebercloud <span style="font-weight:500;color:#8A97C0">— operator app, AWS Cloud, SSO (SAML/OIDC)</span></div>
+    </div>
+    <div style="display:flex;gap:140px;color:#4C5B85;font-size:24px;line-height:1">↓ API (OAuth/API key)<span style="width:20px;display:inline-block"></span>↓ API (OAuth/API key)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;width:100%;max-width:1400px">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:18px 22px;text-align:center">
+        <div style="font:700 24px 'Schibsted Grotesk',sans-serif">Infiterra <span style="font-weight:500;color:#8A97C0">(SaaS)</span></div>
+        <div style="font-size:24px;color:#AAB6D4;margin-top:4px">Data sync &amp; provisioning</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:18px 22px;text-align:center">
+        <div style="font:700 24px 'Schibsted Grotesk',sans-serif">Microsoft Partner Center <span style="font-weight:500;color:#8A97C0">(SaaS)</span></div>
+        <div style="font-size:24px;color:#AAB6D4;margin-top:4px">CSP mgmt, licenses, data retrieval</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;margin-top:2px">
+      <div style="width:220px;border-top:2px solid #E8AC5C"></div>
+      <div style="font-size:24px;color:#E8AC5C;white-space:nowrap">direct API — data exchange &amp; service mapping</div>
+      <div style="width:220px;border-top:2px solid #E8AC5C"></div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:14px;margin-top:26px">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 24px;font-size:24px;line-height:1.4;color:#DCE2F2"><b style="color:#9FC0FF">Ciebercloud ↔ Infiterra API</b> handles data sync &amp; provisioning; <b style="color:#9FC0FF">Ciebercloud ↔ Microsoft API</b> handles CSP management, licenses and data retrieval.</div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 24px;font-size:24px;line-height:1.4;color:#DCE2F2"><b style="color:#9FC0FF">Infiterra ↔ Microsoft Partner Center</b> is a direct API integration of its own — Infiterra is a CSP layer in the middle, not just a file drop.</div>
+  </div>
+</section>
+
+<section data-label="Gap MS · Partner onboarding" data-speaker-notes="Today: onboarding Microsoft means contracting Infiterra as the CSP layer and wiring up OAuth/API-key integrations, rather than a bespoke bilateral price negotiation. With DBP: Microsoft/Infiterra is one more partner integration under the same governance as every other partner." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · MICROSOFT VIA INFITERRA · 01 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Partner onboarding</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · API-MEDIATED</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>Onboarding Microsoft means contracting and integrating with Infiterra (OAuth/API key) as the CSP indirect layer — not negotiating Microsoft directly.</li>
+        <li>SSO and both API integrations (Infiterra, Microsoft Partner Center) have to be stood up and secured before any catalog flows.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">One-off technical integration, not a repeatable pattern</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>Infiterra (or Microsoft Partner Center directly) is onboarded once as a partner integration in the Partner Hub, using the same application and approval flow as any partner.</li>
+        <li>SSO, API keys and revenue-share terms are captured as structured partner configuration, reusable for the next CSP-style partner.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">One onboarding pattern for every partner, CSP or not</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Bespoke integration per partner.</b> Each CSP-style partner risks its own one-off API wiring instead of a reusable pattern.</div>
+      <div><b>Extra intermediary, extra dependency.</b> Infiterra sits between Ciebercloud and Microsoft — an added point of failure and cost layer.</div>
+      <div><b>Two onboarding playbooks.</b> Teams must know which model applies — generic-partner or API/CSP — per partner.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> a one-off CSP integration becomes just another partner application under one governance model.</div>
+  </div>
+</section>
+
+<section data-label="Gap MS · Product onboarding/mod" data-speaker-notes="Today: Microsoft's catalog syncs into Infiterra via direct API, then Ciebercloud pulls it via its own API — real-time but siloed from the rest of the portfolio. With DBP: the Microsoft catalog joins the same TMF620 catalog and Offer Studio as every other partner's products." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · MICROSOFT VIA INFITERRA · 02 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Product onboarding &amp; modification</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · API-MEDIATED</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>Microsoft's SKU/license catalog syncs into Infiterra via direct API, then into Ciebercloud via its own API — real time, but a catalog silo of its own.</li>
+        <li>Pricing and packaging logic live inside Infiterra/Microsoft's own model, outside the operator's normal offer tooling.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Real-time but siloed from the rest of the portfolio</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>Microsoft licenses land in the same TMF620 catalog as every other partner product, tagged by <span style="font-family:ui-monospace,Menlo,monospace">product_origin</span>.</li>
+        <li>The PM bundles Microsoft licenses with own and other-partner products in Offer Studio, under one pricing and revenue-split model.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">One catalog, one bundle-composition surface</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Catalog silo.</b> Microsoft SKUs can't be composed into cross-partner bundles alongside the rest of the portfolio.</div>
+      <div><b>Opaque markup chain.</b> Microsoft wholesale price → Infiterra → operator layers margin in a way that's hard to audit end to end.</div>
+      <div><b>Dependent on Infiterra's roadmap.</b> New Microsoft SKUs or terms only reach the operator once Infiterra maps them.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> a real-time but siloed CSP catalog becomes one composable line in the same product catalog.</div>
+  </div>
+</section>
+
+<section data-label="Gap MS · Fulfillment" data-speaker-notes="Today: license add/modify/delete calls flow API-to-API through Infiterra to Microsoft Partner Center, largely automatic — but invisible outside that integration. With DBP: the same order sits in the shared fulfillment queue and the customer's own order history." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · MICROSOFT VIA INFITERRA · 03 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Fulfillment — add, modify, delete</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · API-MEDIATED</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>License A/M/D calls flow Ciebercloud → Infiterra → Microsoft Partner Center by API, largely automatic and fast.</li>
+        <li>That automation is invisible outside the integration — no shared order record, no ticket the customer can track.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Fast, but a black box to the rest of the operator</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>The same API automation fires from the platform's fulfillment engine, so the order lands in the shared queue with an SLA timer.</li>
+        <li>The customer sees license changes in Customer 360 order history — same surface as every other product.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">Same automation, now visible and tracked</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>No shared order record.</b> Fast fulfillment still leaves no trace the customer or care can look up directly.</div>
+      <div><b>Silent failure risk.</b> If an API call fails inside the Infiterra↔Microsoft leg, nothing outside that chain surfaces it.</div>
+      <div><b>SSO-gated visibility.</b> Only Ciebercloud users with the right session can see status at all.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> fast-but-invisible API fulfillment becomes fast and tracked, in the same queue as everything else.</div>
+  </div>
+</section>
+
+<section data-label="Gap MS · Invoicing to client" data-speaker-notes="Today: usage and license data are retrieved via API rather than a flat file, but still need manual mapping into the operator's billing categories. With DBP: that mapping is a rule in the shared settlement engine, and the client sees one consolidated invoice." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · MICROSOFT VIA INFITERRA · 04 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Invoicing to the client</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · API-MEDIATED</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>License and usage data are retrieved via API from Microsoft/Infiterra instead of a monthly flat file — but still land as raw CSP data.</li>
+        <li>Someone still has to map that data to the operator's own billing categories and inject it into billing by hand.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">API-fed, but the mapping step is still manual</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>The API feed maps to billing categories by rule, the same mechanism used for every other partner's usage data.</li>
+        <li>The client sees Microsoft licenses on the same consolidated invoice as everything else, explained by Bill Analyzer.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">One rule engine, one invoice, no separate mapping step</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Manual mapping persists.</b> API data still needs a person to reconcile it against internal billing categories.</div>
+      <div><b>Split customer bill.</b> Microsoft charges risk appearing separately from the rest of the customer's invoice.</div>
+      <div><b>CSP margin stacking.</b> Microsoft → Infiterra → operator pricing layers make true landed cost harder to verify.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> API-fed but hand-mapped billing becomes one rule engine feeding one consolidated invoice.</div>
+  </div>
+</section>
+
+<section data-label="Gap MS · Care/technical post-sale" data-speaker-notes="Today: data retrieval API gives Ciebercloud direct visibility into license/subscription status, better than the generic-partner case — but Microsoft-side incidents still escalate outside the operator's own support tooling. With DBP: one ticket, one escalation path, for CSP and non-CSP partners alike." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · MICROSOFT VIA INFITERRA · 05 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Care &amp; technical post-sale</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · API-MEDIATED</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>The data-retrieval API lets care pull license/subscription status directly — no console impersonation needed, better than the generic-partner case.</li>
+        <li>Actual service incidents still escalate to Microsoft through Infiterra, outside the operator's own ticketing.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Good visibility, but escalation is still a separate track</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>License/subscription status surfaces in the same unified ticket view care uses for every partner.</li>
+        <li>Escalation to Microsoft/Infiterra fires via the same API-escalation pattern as any other partner — one track, not two.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">Same good visibility, no separate escalation track</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Two escalation tracks.</b> Care juggles the generic-partner flow and the Microsoft/Infiterra API flow differently.</div>
+      <div><b>Infiterra as an extra hop.</b> A Microsoft-side issue may need to be diagnosed through Infiterra before reaching Microsoft support.</div>
+      <div><b>Tooling knowledge silo.</b> Only agents trained on the Infiterra integration can use it effectively.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> good-but-separate CSP visibility becomes one ticket and one escalation pattern for every partner.</div>
+  </div>
+</section>
+
+<section data-label="Gap MS · Settlement" data-speaker-notes="Today: license/usage data via API lets Infiterra-side reconciliation run tighter than the generic case, but the Microsoft-Infiterra-operator margin chain is opaque and each layer settles separately. With DBP: CSP revenue share sits in the same settlement engine and margin dashboard as every partner." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">GAP ANALYSIS · MICROSOFT VIA INFITERRA · 06 OF 06</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 22px;letter-spacing:-.015em">Settlement</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY · API-MEDIATED</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#3A4258">
+        <li>License/usage data via API keeps reconciliation tighter than the generic file-based case — but it settles Microsoft↔Infiterra and Infiterra↔operator as two separate legs.</li>
+        <li>True margin per client requires unwinding both markup layers by hand.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#B3261E">Two settlement legs, opaque combined margin</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">WITH DBP</div>
+      <ul style="margin:0;padding-left:22px;font-size:24px;line-height:1.4;color:#DCE2F2">
+        <li>The settlement module models the CSP revenue chain (Microsoft wholesale → Infiterra fee → operator margin) as one agreement, not two.</li>
+        <li>The operator sees true landed margin per client, in the same dashboard as every other partner.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:24px;font-weight:700;color:#9FC0FF">One agreement, one margin view, CSP included</div>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #F0D6D3;border-radius:16px;padding:22px 28px;margin-top:20px">
+    <div style="font-size:24px;font-weight:700;color:#B3261E;letter-spacing:.06em;margin-bottom:10px">OUR VIEW · RISKS IN TODAY'S MODEL</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;font-size:24px;line-height:1.4;color:#3A4258">
+      <div><b>Stacked markups, hidden margin.</b> Two settlement legs make true per-client profitability hard to see.</div>
+      <div><b>Infiterra fee exposure.</b> Any change in Infiterra's own fee structure quietly moves the operator's margin.</div>
+      <div><b>No single reconciliation record.</b> Disputes may require pulling data from both Infiterra and Microsoft separately.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:20px 28px;margin-top:18px;display:flex;align-items:center;gap:20px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35;color:#fff"><b>Gap:</b> a two-leg, opaque CSP settlement becomes one modeled agreement with one margin view.</div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 3: USER JOURNEY ============ -->
+<section data-label="User journey" data-speaker-notes="One story runs through the demo: Aurora Retail (buyer) discovers and buys; Trackwise (partner) fulfills and settles; Sofia (operator PM) designs the bundle; Bergnet (channel partner) resells white-label. Every step maps to a product surface." style="background:#fff;color:#0D1B3E;display:flex;flex-direction:column;padding:90px 120px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:18px">02 · USER JOURNEY</div>
+  <h2 style="font:800 58px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 16px;letter-spacing:-.015em">One end-to-end journey, four protagonists.</h2>
+  <div style="font-size:26px;color:#5A6478;margin-bottom:50px">Discover → Explore → Buy → Use → Ask → Engage — while behind the scenes, partners fulfill and get paid.</div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px">
+    <!-- journey track -->
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0;align-items:stretch">
+      <div style="display:flex;flex-direction:column;gap:14px;padding:0 18px;border-left:4px solid #1A56DB">
+        <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">DISCOVER</div>
+        <div style="font-size:24px;line-height:1.45;color:#3A4358">The buyer describes their need to the <b>Product Matchmaker</b> (AI) or browses the marketplace.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:0 18px;border-left:4px solid #1A56DB">
+        <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">EXPLORE</div>
+        <div style="font-size:24px;line-height:1.45;color:#3A4358">Compares operator, partner and bundle solutions — with explainable recommendations.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:0 18px;border-left:4px solid #1A56DB">
+        <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">BUY</div>
+        <div style="font-size:24px;line-height:1.45;color:#3A4358">Guided 5-step configurator + B2B checkout with hierarchical billing accounts.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:0 18px;border-left:4px solid #0FA968">
+        <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">USE</div>
+        <div style="font-size:24px;line-height:1.45;color:#3A4358">360° dashboard: services, live orders, invoices (read-only), usage and org hierarchy.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:0 18px;border-left:4px solid #0FA968">
+        <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">ASK</div>
+        <div style="font-size:24px;line-height:1.45;color:#3A4358"><b>Bill Analyzer</b> explains every invoice delta; support tickets with visible SLAs.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:0 18px;border-left:4px solid #0FA968">
+        <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">ENGAGE</div>
+        <div style="font-size:24px;line-height:1.45;color:#3A4358"><b>Optimize My Products</b> proposes better fits — proactive savings instead of churn.</div>
+      </div>
+    </div>
+    <!-- backstage personas -->
+    <div style="background:#F6F7FA;border:1px solid #E3E7EF;border-radius:20px;padding:36px 44px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:28px">
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div style="width:52px;height:52px;border-radius:14px;background:#6D28D9;color:#fff;display:grid;place-items:center;font:700 24px sans-serif;flex:none">TW</div>
+        <div><div style="font-size:24px;font-weight:700;margin-bottom:4px">Supplier partner</div><div style="font-size:24px;line-height:1.45;color:#5A6478">Self-onboards, publishes products, fulfills orders, approves the monthly settlement statement.</div></div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div style="width:52px;height:52px;border-radius:14px;background:#0D1B3E;color:#fff;display:grid;place-items:center;font:700 24px sans-serif;flex:none">PM</div>
+        <div><div style="font-size:24px;font-weight:700;margin-bottom:4px">Operator product manager</div><div style="font-size:24px;line-height:1.45;color:#5A6478">Composes bundles mixing own + partner products, sets pricing and revenue split, publishes to channels.</div></div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div style="width:52px;height:52px;border-radius:14px;background:#B4530A;color:#fff;display:grid;place-items:center;font:700 24px sans-serif;flex:none">BG</div>
+        <div><div style="font-size:24px;font-weight:700;margin-bottom:4px">Channel partner</div><div style="font-size:24px;line-height:1.45;color:#5A6478">Resells the catalog under its own brand and pricing, keeping the customer relationship.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4: SOLUTION MODULES ============ -->
+<section data-label="Modules" data-speaker-notes="Five surfaces on one headless platform. All share the token-based design system (white-label per tenant), one TMF620 catalog with product_origin, and Wave AI woven into every flow — never a generic chatbot." style="background:linear-gradient(180deg,#0A1633,#0D1B3E);color:#fff;display:flex;flex-direction:column;padding:90px 120px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9FC0FF;margin-bottom:18px">03 · SOLUTION MODULES</div>
+  <h2 style="font:800 58px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 50px;letter-spacing:-.015em">Five surfaces, one headless platform.</h2>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;flex:1">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 30px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#9FC0FF">01</div>
+      <div style="font:700 29px 'Schibsted Grotesk',sans-serif">Shopfront &amp; Marketplace</div>
+      <div style="font-size:24px;line-height:1.5;color:#AAB6D4">AI-first discovery, multi-provider catalog, guided configurator, B2B checkout and order tracking.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:600;color:#7E8CB0">END CUSTOMER</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 30px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#9FC0FF">02</div>
+      <div style="font:700 29px 'Schibsted Grotesk',sans-serif">Customer 360° Self-Serve</div>
+      <div style="font-size:24px;line-height:1.5;color:#AAB6D4">Services, orders, read-only invoices, usage, tickets and B2B org hierarchy — with Bill Analyzer.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:600;color:#7E8CB0">END CUSTOMER</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 30px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#9FC0FF">03</div>
+      <div style="font:700 29px 'Schibsted Grotesk',sans-serif">Partner Hub</div>
+      <div style="font-size:24px;line-height:1.5;color:#AAB6D4">Self-onboarding, product publishing, fulfillment queue, settlement statements and performance.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:600;color:#7E8CB0">SUPPLIER PARTNER</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 30px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#9FC0FF">04</div>
+      <div style="font:700 29px 'Schibsted Grotesk',sans-serif">Channel Partner Portal</div>
+      <div style="font-size:24px;line-height:1.5;color:#AAB6D4">White-label storefront studio, markup pricing, own bundles, customer book with margin view.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:600;color:#7E8CB0">RESELLER / B2B2X</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 30px;display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#9FC0FF">05</div>
+      <div style="font:700 29px 'Schibsted Grotesk',sans-serif">Offer Design Studio</div>
+      <div style="font-size:24px;line-height:1.5;color:#AAB6D4">Bundle composer mixing own + partner products, pricing &amp; revenue split, lifecycle and analytics.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:600;color:#7E8CB0">OPERATOR PM</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:40px;margin-top:44px;padding-top:36px;border-top:1px solid rgba(255,255,255,.14);font-size:24px;color:#AAB6D4">
+    <div style="display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;border-radius:4px;background:#9FC0FF"></span>Token-based design system — white-label per tenant</div>
+    <div style="display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;border-radius:4px;background:#9FC0FF"></span>One TMF620 catalog with <span style="font-family:ui-monospace,Menlo,monospace;font-size:24px">product_origin</span></div>
+    <div style="display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;border-radius:4px;background:#9FC0FF"></span>Wave AI woven into every flow — inline, explainable</div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4B: PLATFORM ARCHITECTURE ============ -->
+<section data-label="Platform architecture" data-speaker-notes="The five modules share one TMF Open API core and one catalog. Every partner integration — Microsoft via Infiterra CSP APIs, Palo Alto's direct API, or a generic file/SFTP partner — passes through the Process Integration Layer, which absorbs each partner's own integration shape so the modules only ever talk to one internal contract." style="background:linear-gradient(180deg,#0A1633,#0D1B3E);color:#fff;display:flex;flex-direction:column;padding:64px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9FC0FF;margin-bottom:10px">03B · PLATFORM ARCHITECTURE</div>
+  <h2 style="font:800 44px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 26px;letter-spacing:-.015em">One platform, decoupled from every partner's integration style.</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px">
+    <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 8px;text-align:center;font-size:24px;font-weight:700">Shopfront</div>
+    <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 8px;text-align:center;font-size:24px;font-weight:700">Customer 360</div>
+    <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 8px;text-align:center;font-size:24px;font-weight:700">Partner Hub</div>
+    <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 8px;text-align:center;font-size:24px;font-weight:700">Channel Portal</div>
+    <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 8px;text-align:center;font-size:24px;font-weight:700">Offer Studio</div>
+  </div>
+  <div style="text-align:center;font-size:24px;color:#8A97C0;margin:6px 0 4px">shared TMF Open API core &amp; one product catalog</div>
+
+  <div style="display:flex;justify-content:center;color:#4C5B85;font-size:24px;line-height:1">↓ ↓ ↓ ↓ ↓</div>
+
+  <div style="background:rgba(159,192,255,.14);border:2px solid #9FC0FF;border-radius:14px;padding:14px 24px;margin:4px 0">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:10px">
+      <div style="font:800 24px 'Schibsted Grotesk',sans-serif;color:#fff">PROCESS INTEGRATION LAYER (PIL)</div>
+      <div style="font-size:24px;color:#AAB6D4">— mapped to TM Forum Open APIs</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+      <div style="background:rgba(255,255,255,.08);border-radius:8px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span style="font-size:24px;color:#fff">Partner onboarding</span><span style="font-size:24px;font-weight:700;color:#9FC0FF;white-space:nowrap">TMF632/651</span>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border-radius:8px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span style="font-size:24px;color:#fff">Product onboarding/mod</span><span style="font-size:24px;font-weight:700;color:#9FC0FF;white-space:nowrap">TMF620</span>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border-radius:8px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span style="font-size:24px;color:#fff">Fulfillment (A/M/D)</span><span style="font-size:24px;font-weight:700;color:#9FC0FF;white-space:nowrap">TMF622</span>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border-radius:8px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span style="font-size:24px;color:#fff">Invoicing to client</span><span style="font-size:24px;font-weight:700;color:#9FC0FF;white-space:nowrap">TMF678</span>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border-radius:8px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span style="font-size:24px;color:#fff">Care / tech post-sale</span><span style="font-size:24px;font-weight:700;color:#9FC0FF;white-space:nowrap">TMF621</span>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border-radius:8px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span style="font-size:24px;color:#fff">Settlement</span><span style="font-size:24px;font-weight:700;color:#9FC0FF;white-space:nowrap">TMF651/676</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:center;color:#4C5B85;font-size:24px;line-height:1;margin:4px 0">↓ ↓ ↓</div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px 20px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:4px">Microsoft Partner Center</div>
+      <div style="font-size:24px;color:#AAB6D4;line-height:1.3">CSP license API — direct, no intermediary</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px 20px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:4px">Palo Alto Networks</div>
+      <div style="font-size:24px;color:#AAB6D4;line-height:1.3">Direct partner API — provisioning &amp; usage</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px 20px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:4px">Generic partners</div>
+      <div style="font-size:24px;color:#AAB6D4;line-height:1.3">API, SFTP or file — same contract in</div>
+    </div>
+  </div>
+
+  <div style="background:#fff;color:#0D1B3E;border-radius:14px;padding:18px 26px;margin-top:22px;display:flex;align-items:center;gap:18px">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#1A56DB" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.35"><b>Why it matters:</b> new partners plug into the PIL, not every module — a new integration style never means rewriting Shopfront, Partner Hub or Offer Studio. The PIL takes over the role Infiterra plays today for Microsoft.</div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 5: FUNCTIONAL SCOPE PER MODULE ============ -->
+<section data-label="Functional scope" data-speaker-notes="Scope guardrails: customer billing is read-only (operator-sourced); partner settlement is the billing-like surface the platform owns. Everything themeable via tokens; front-end is headless React over a BFF on TMF Open APIs (620 catalog, 622 ordering, 632 party)." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:60px 100px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">04 · FUNCTIONAL SCOPE BY MODULE</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 26px;letter-spacing:-.015em">What v1 delivers — module by module.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px 24px;flex:1">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:24px 26px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px"><span style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#1A56DB">01</span><div style="font:700 25px 'Schibsted Grotesk',sans-serif">Shopfront &amp; Marketplace</div></div>
+      <div style="font-size:24px;line-height:1.4;color:#3A4358">AI Matchmaker landing · catalog with origin filters &amp; compare · 5-step configurator with live pricing · cart with bundle optimization · B2B checkout · order confirmation with orchestration tracking.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:24px 26px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px"><span style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#1A56DB">02</span><div style="font:700 25px 'Schibsted Grotesk',sans-serif">Customer 360° Self-Serve</div></div>
+      <div style="font-size:24px;line-height:1.4;color:#3A4358">Account overview · service inventory per branch · live order tracking · invoices &amp; payments <b>(read-only, operator-sourced)</b> with Bill Analyzer · usage &amp; cap alerts · org hierarchy · Optimize My Products.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:24px 26px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px"><span style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#1A56DB">03</span><div style="font:700 25px 'Schibsted Grotesk',sans-serif">Partner Hub</div></div>
+      <div style="font-size:24px;line-height:1.4;color:#3A4358">Self-onboarding with compliance &amp; approval · catalog Draft → Review → Published · fulfillment queue with SLA &amp; Order Assurance alerts · <b>settlement statements</b> (revenue share, disputes, self-billing) · performance forecast.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:24px 26px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px"><span style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#1A56DB">04</span><div style="font:700 25px 'Schibsted Grotesk',sans-serif">Channel Partner Portal</div></div>
+      <div style="font-size:24px;line-height:1.4;color:#3A4358">White-label storefront studio with brand tokens &amp; live preview · markup pricing with wholesale floor enforcement · own bundles · customer book with margin view &amp; renewal alerts.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:16px;padding:24px 26px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px"><span style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#1A56DB">05</span><div style="font:700 25px 'Schibsted Grotesk',sans-serif">Offer Design Studio</div></div>
+      <div style="font-size:24px;line-height:1.4;color:#3A4358">Bundle composer mixing own + partner products · pricing &amp; revenue split with partner floor guard · approval flow, versioning &amp; multi-channel publish · offer analytics with funnel &amp; attach rates.</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:36px;margin-top:24px;font-size:24px;color:#5A6478;align-items:center;flex-wrap:wrap">
+    <span style="font-weight:700;color:#0D1B3E">Guardrails:</span>
+    <span>Customer billing = read-only mirror; settlement is what we own</span>
+    <span style="color:#C9CFDC">·</span><span>Everything themeable via tokens — no hardcoded brand</span>
+    <span style="color:#C9CFDC">·</span><span>Headless React over BFF on TMF 620 / 622 / 632</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 6: MODULE 01 SHOPFRONT ============ -->
+<section data-label="M1 · Shopfront" data-speaker-notes="AI-first landing: the Matchmaker is the hero, not a chat bubble. Everything downstream — catalog, configurator, checkout — carries the buyer's stated need." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px 60px">
+  <div style="display:flex;align-items:baseline;gap:24px;margin-bottom:28px">
+    <span style="font:800 30px 'Schibsted Grotesk',sans-serif;color:#1A56DB">01</span>
+    <h2 style="font:800 48px/1.1 'Schibsted Grotesk',sans-serif;margin:0;letter-spacing:-.015em">Shopfront &amp; Marketplace</h2>
+    <span style="margin-left:auto;font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">END CUSTOMER</span>
+  </div>
+  <div style="flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:44px;min-height:0">
+    <div style="display:flex;align-items:center;justify-content:center;min-height:0">
+      <img src="shots/mod-shopfront.png" alt="Shopfront landing with AI Matchmaker" style="max-width:100%;max-height:100%;border-radius:18px;box-shadow:0 30px 80px rgba(4,12,36,.35);border:1px solid #E3E7EF">
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:14px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.1em;color:#1A56DB;margin-bottom:6px">KEY CAPABILITIES</div>
+      <ul style="margin:0;padding-left:24px;font-size:24px;line-height:1.4;color:#3A4358;display:flex;flex-direction:column;gap:14px">
+        <li><b>AI Product Matchmaker</b> — natural-language discovery with explainable recommendations tied to the buyer's stated need.</li>
+        <li><b>Multi-provider catalog</b> — operator and partner products side by side, with origin badges and side-by-side compare.</li>
+        <li><b>5-step guided configurator</b> — live pricing updates as options change, with validation rules per product type.</li>
+        <li><b>Smart cart</b> — bundle-optimization suggestions surfaced from the same stated need.</li>
+        <li><b>B2B checkout</b> — hierarchical billing accounts, PO reference and multi-approver support.</li>
+        <li><b>Live order tracking</b> — status visible from the moment of purchase, no separate portal required.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 7: MODULE 02 CUSTOMER 360 ============ -->
+<section data-label="M2 · Customer 360" data-speaker-notes="Billing is a read-only mirror of the operator's system — the guardrail. Bill Analyzer explains every delta; Optimize My Products drives retention through proactive savings." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px 60px">
+  <div style="display:flex;align-items:baseline;gap:24px;margin-bottom:28px">
+    <span style="font:800 30px 'Schibsted Grotesk',sans-serif;color:#1A56DB">02</span>
+    <h2 style="font:800 48px/1.1 'Schibsted Grotesk',sans-serif;margin:0;letter-spacing:-.015em">Customer 360° Self-Serve</h2>
+    <span style="margin-left:auto;font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">END CUSTOMER</span>
+  </div>
+  <div style="flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:44px;min-height:0">
+    <div style="display:flex;align-items:center;justify-content:center;min-height:0">
+      <img src="shots/mod-c360.png" alt="Customer 360 dashboard" style="max-width:100%;max-height:100%;border-radius:18px;box-shadow:0 30px 80px rgba(4,12,36,.35);border:1px solid #E3E7EF">
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:14px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.1em;color:#1A56DB;margin-bottom:6px">KEY CAPABILITIES</div>
+      <ul style="margin:0;padding-left:24px;font-size:24px;line-height:1.4;color:#3A4358;display:flex;flex-direction:column;gap:14px">
+        <li><b>Account overview</b> — services, live order tracking and org hierarchy in one view.</li>
+        <li><b>Service inventory</b> — tracked per branch/site, not just per account.</li>
+        <li><b>Read-only invoices</b> — mirrored from the operator's billing system, never an independent total.</li>
+        <li><b>Bill Analyzer</b> — explains every invoice delta in plain language.</li>
+        <li><b>Usage &amp; cap alerts</b> — proactive notice before overage, not after the bill arrives.</li>
+        <li><b>Optimize My Products</b> — proactive right-sizing recommendations as a retention lever.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 8: MODULE 03 PARTNER HUB ============ -->
+<section data-label="M3 · Partner Hub" data-speaker-notes="Settlement is the billing-like surface the platform owns: statements, revenue share per agreement, disputes, self-billing invoices. Order Assurance AI flags stalled fulfillments with a suggested fix." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px 60px">
+  <div style="display:flex;align-items:baseline;gap:24px;margin-bottom:28px">
+    <span style="font:800 30px 'Schibsted Grotesk',sans-serif;color:#1A56DB">03</span>
+    <h2 style="font:800 48px/1.1 'Schibsted Grotesk',sans-serif;margin:0;letter-spacing:-.015em">Partner Hub</h2>
+    <span style="margin-left:auto;font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">SUPPLIER PARTNER</span>
+  </div>
+  <div style="flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:44px;min-height:0">
+    <div style="display:flex;align-items:center;justify-content:center;min-height:0">
+      <img src="shots/mod-partnerhub.png" alt="Partner Hub dashboard" style="max-width:100%;max-height:100%;border-radius:18px;box-shadow:0 30px 80px rgba(4,12,36,.35);border:1px solid #E3E7EF">
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:14px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.1em;color:#1A56DB;margin-bottom:6px">KEY CAPABILITIES</div>
+      <ul style="margin:0;padding-left:24px;font-size:24px;line-height:1.4;color:#3A4358;display:flex;flex-direction:column;gap:14px">
+        <li><b>Self-onboarding application</b> — compliance docs and terms captured with a built-in approval workflow.</li>
+        <li><b>Product publishing lifecycle</b> — Draft → Review → Published, versioned over time.</li>
+        <li><b>Fulfillment queue</b> — SLA timers on every order, not just a task list.</li>
+        <li><b>Order Assurance AI</b> — flags stalled fulfillments with a suggested root cause and fix.</li>
+        <li><b>Settlement statements</b> — revenue share per agreement, adjustments and disputes.</li>
+        <li><b>Performance dashboard</b> — revenue trend, forecast and operational KPIs.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 9: MODULE 04 CHANNEL PORTAL ============ -->
+<section data-label="M4 · Channel Portal" data-speaker-notes="B2B2X proof: Bergnet resells under its own brand — the storefront components are identical, only tenant tokens change. Floor prices from the wholesale agreement are enforced at publish time." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px 60px">
+  <div style="display:flex;align-items:baseline;gap:24px;margin-bottom:28px">
+    <span style="font:800 30px 'Schibsted Grotesk',sans-serif;color:#1A56DB">04</span>
+    <h2 style="font:800 48px/1.1 'Schibsted Grotesk',sans-serif;margin:0;letter-spacing:-.015em">Channel Partner Portal</h2>
+    <span style="margin-left:auto;font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">RESELLER / B2B2X</span>
+  </div>
+  <div style="flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:44px;min-height:0">
+    <div style="display:flex;align-items:center;justify-content:center;min-height:0">
+      <img src="shots/mod-channel.png" alt="Channel partner storefront studio" style="max-width:100%;max-height:100%;border-radius:18px;box-shadow:0 30px 80px rgba(4,12,36,.35);border:1px solid #E3E7EF">
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:14px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.1em;color:#1A56DB;margin-bottom:6px">KEY CAPABILITIES</div>
+      <ul style="margin:0;padding-left:24px;font-size:24px;line-height:1.4;color:#3A4358;display:flex;flex-direction:column;gap:14px">
+        <li><b>White-label storefront studio</b> — brand tokens (logo, color, type) with live preview.</li>
+        <li><b>Markup pricing</b> — wholesale floor enforced automatically; can't be sold below cost.</li>
+        <li><b>Own bundles</b> — the channel partner composes its own packages from the wholesale catalog.</li>
+        <li><b>Customer book</b> — managed accounts with a margin view per customer.</li>
+        <li><b>Renewal alerts</b> — upcoming contract end dates surfaced proactively.</li>
+        <li><b>Shared components</b> — the same storefront building blocks as the operator's own Shopfront, only tokens change.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 10: MODULE 05 OFFER STUDIO ============ -->
+<section data-label="M5 · Offer Studio" data-speaker-notes="The PM composes the Connected Operations bundle: own Private 5G + Trackwise Fleet IoT. Pricing respects each partner's floor; the revenue split shown here is exactly what lands on the partner's settlement statement." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px 60px">
+  <div style="display:flex;align-items:baseline;gap:24px;margin-bottom:28px">
+    <span style="font:800 30px 'Schibsted Grotesk',sans-serif;color:#1A56DB">05</span>
+    <h2 style="font:800 48px/1.1 'Schibsted Grotesk',sans-serif;margin:0;letter-spacing:-.015em">Offer Design Studio</h2>
+    <span style="margin-left:auto;font-size:24px;font-weight:700;letter-spacing:.08em;color:#8A92A6">OPERATOR PM</span>
+  </div>
+  <div style="flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:44px;min-height:0">
+    <div style="display:flex;align-items:center;justify-content:center;min-height:0">
+      <img src="shots/mod-offerstudio.png" alt="Offer Studio bundle composer" style="max-width:100%;max-height:100%;border-radius:18px;box-shadow:0 30px 80px rgba(4,12,36,.35);border:1px solid #E3E7EF">
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:14px">
+      <div style="font-size:24px;font-weight:700;letter-spacing:.1em;color:#1A56DB;margin-bottom:6px">KEY CAPABILITIES</div>
+      <ul style="margin:0;padding-left:24px;font-size:24px;line-height:1.4;color:#3A4358;display:flex;flex-direction:column;gap:14px">
+        <li><b>Bundle composer</b> — mix own and onboarded partner products into one sellable offer.</li>
+        <li><b>Pricing &amp; revenue split</b> — enforces each partner's floor price automatically.</li>
+        <li><b>Approval flow &amp; versioning</b> — offers move through review before publish.</li>
+        <li><b>Multi-channel publish</b> — the same bundle reaches Shopfront and Channel Portal at once.</li>
+        <li><b>Offer analytics</b> — funnel and attach-rate tracking per bundle.</li>
+        <li><b>One source of truth</b> — the split published here is exactly what appears on the partner's settlement statement.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</x-import>
+
+</x-dc>
+</body>
+</html>

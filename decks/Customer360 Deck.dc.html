@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#0A1633;font-family:'Instrument Sans',system-ui,sans-serif}</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+<section data-label="Account 360" data-speaker-notes="Customer self-manages: account overview, live order tracking, service inventory, read-only billing summary, Optimize My Products AI, usage caps, org hierarchy." style="background:#F6F7FA;display:flex;align-items:flex-start;justify-content:center;padding:40px">
+  <div style="width:1280px;transform:scale(1.05);transform-origin:top center;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(4,12,36,.3)">
+  <div style="background:#fff">
+  <!-- nav -->
+  <div style="display:flex;align-items:center;gap:28px;padding:0 40px;height:64px;border-bottom:1px solid #E3E7EF;background:#fff">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:7px;background:#0D1B3E;color:#fff;display:grid;place-items:center;font:800 14px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 16px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Northlink <span style="font-weight:500;color:#5A6478">Business</span></div></div>
+    <div style="display:flex;align-items:center;gap:24px;font-size:13.5px;font-weight:500;color:#3A4358"><span>Marketplace</span><span style="color:#0D1B3E;font-weight:600;border-bottom:2px solid #1A56DB;padding:21px 0">My account</span><span>Support</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:14px">
+      <div style="display:flex;align-items:center;gap:8px;border:1px solid #E3E7EF;border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600;color:#0D1B3E">Aurora Retail Group <span style="color:#8A92A6">· HQ Vienna</span> <span style="color:#8A92A6">▾</span></div>
+      <div style="width:32px;height:32px;border-radius:99px;background:#EAF0FE;color:#1A56DB;display:grid;place-items:center;font-size:12px;font-weight:700">AK</div>
+    </div>
+  </div>
+  <!-- sub tabs -->
+  <div style="display:flex;gap:24px;padding:0 40px;border-bottom:1px solid #E3E7EF;background:#fff;font-size:13px;font-weight:600;color:#5A6478">
+    <span style="color:#1A56DB;border-bottom:2px solid #1A56DB;padding:13px 0">Overview</span>
+    <span style="padding:13px 0">Products &amp; services</span><span style="padding:13px 0">Orders</span><span style="padding:13px 0">Invoices &amp; payments</span><span style="padding:13px 0">Usage</span><span style="padding:13px 0">Tickets</span><span style="padding:13px 0">Organization</span>
+  </div>
+  <div style="background:#F6F7FA;padding:28px 40px 44px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:22px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Good afternoon, Anna</div>
+      <div style="font-size:12.5px;color:#8A92A6">Customer since 2023 · account manager: T. Berger</div>
+    </div>
+    <!-- KPI strip -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px">
+      <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px"><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#8A92A6;margin-bottom:8px">ACTIVE SERVICES</div><div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">28</div><div style="font-size:11.5px;color:#5A6478;margin-top:3px">across 3 branches</div></div>
+      <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px"><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#8A92A6;margin-bottom:8px">OPEN ORDERS</div><div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">2</div><div style="font-size:11.5px;color:#0FA968;font-weight:600;margin-top:3px">both on schedule</div></div>
+      <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px"><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#8A92A6;margin-bottom:8px">LAST INVOICE (JUNE)</div><div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">€12,481</div><div style="font-size:11.5px;color:#5A6478;margin-top:3px">due 15 Jul · autopay on</div></div>
+      <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px"><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#8A92A6;margin-bottom:8px">OPEN TICKETS</div><div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">1</div><div style="font-size:11.5px;color:#5A6478;margin-top:3px">response within 2h SLA</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:16px">
+      <!-- left column -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <!-- order tracking -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:#0D1B3E">Orders in progress</div><div style="font-size:12px;font-weight:600;color:#1A56DB">All orders →</div></div>
+          <div style="border:1px solid #EEF0F5;border-radius:10px;padding:14px 16px;margin-bottom:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div style="font-size:13px;font-weight:700;color:#0D1B3E">#ORD-2026-004821 · Private 5G Campus + Fleet IoT</div><span style="font-size:10.5px;font-weight:700;color:#B45309;background:#FEF3E2;padding:3px 9px;border-radius:99px">IN FULFILLMENT</span></div>
+            <div style="height:5px;border-radius:99px;background:#E9EDF5;overflow:hidden;margin-bottom:8px"><div style="width:45%;height:100%;background:linear-gradient(90deg,#0FA968,#1A56DB);border-radius:99px"></div></div>
+            <div style="font-size:11.5px;color:#8A92A6">Site survey scheduled 8 Jul · tracking kits arriving 7 Jul · est. go-live w/c 24 Aug</div>
+          </div>
+          <div style="border:1px solid #EEF0F5;border-radius:10px;padding:14px 16px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div style="font-size:13px;font-weight:700;color:#0D1B3E">#ORD-2026-004640 · 6× SD-WAN Branch Connect</div><span style="font-size:10.5px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:3px 9px;border-radius:99px">4 OF 6 ACTIVE</span></div>
+            <div style="height:5px;border-radius:99px;background:#E9EDF5;overflow:hidden;margin-bottom:8px"><div style="width:70%;height:100%;background:#0FA968;border-radius:99px"></div></div>
+            <div style="font-size:11.5px;color:#8A92A6">Graz + Linz branches live · Salzburg install 11 Jul · Innsbruck pending fibre</div>
+          </div>
+        </div>
+        <!-- services inventory -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:#0D1B3E">Products &amp; services</div><div style="font-size:12px;font-weight:600;color:#1A56DB">Full inventory →</div></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:9px 0;border-bottom:1px solid #EEF0F5;font-size:10.5px;font-weight:700;letter-spacing:.07em;color:#8A92A6"><span>SERVICE</span><span>ASSIGNED TO</span><span>MONTHLY</span><span>STATUS</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:12px 0;border-bottom:1px solid #EEF0F5;font-size:12.5px;align-items:center"><div><b style="color:#0D1B3E">SD-WAN Branch Connect</b><div style="font-size:11px;color:#8A92A6">4 sites</div></div><span style="color:#3A4358">All branches</span><span style="color:#3A4358">€480.00</span><span style="font-size:10px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:2px 8px;border-radius:99px;justify-self:start">ACTIVE</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:12px 0;border-bottom:1px solid #EEF0F5;font-size:12.5px;align-items:center"><div><b style="color:#0D1B3E">Business Mobile 5G</b><div style="font-size:11px;color:#8A92A6">86 subscriptions</div></div><span style="color:#3A4358">HQ + branches</span><span style="color:#3A4358">€2,322.00</span><span style="font-size:10px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:2px 8px;border-radius:99px;justify-self:start">ACTIVE</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:12px 0;border-bottom:1px solid #EEF0F5;font-size:12.5px;align-items:center"><div><b style="color:#0D1B3E">Smart Venue Analytics</b><div style="font-size:11px;color:#8A92A6">Partner · SIGNALQ · 12 stores</div></div><span style="color:#3A4358">Branch Graz</span><span style="color:#3A4358">€1,020.00</span><span style="font-size:10px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:2px 8px;border-radius:99px;justify-self:start">ACTIVE</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:12px 0;font-size:12.5px;align-items:center"><div><b style="color:#0D1B3E">Private 5G Campus</b><div style="font-size:11px;color:#8A92A6">Linz plant</div></div><span style="color:#3A4358">Branch Linz</span><span style="color:#8A92A6">starts at go-live</span><span style="font-size:10px;font-weight:700;color:#B45309;background:#FEF3E2;padding:2px 8px;border-radius:99px;justify-self:start">PENDING</span></div>
+        </div>
+      </div>
+      <!-- right column -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <!-- billing summary read-only -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:14px;font-weight:700;color:#0D1B3E">Billing</div><span style="font-size:9.5px;font-weight:700;letter-spacing:.06em;color:#8A92A6;border:1px solid #E3E7EF;padding:3px 8px;border-radius:99px">OPERATOR-SOURCED</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:12.5px;color:#3A4358">
+            <div style="display:flex;justify-content:space-between;align-items:center"><div><b style="color:#0D1B3E">June 2026</b><div style="font-size:11px;color:#8A92A6">INV-2026-06-4471 · due 15 Jul</div></div><b style="color:#0D1B3E">€12,481.20</b></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><div><b style="color:#0D1B3E">May 2026</b><div style="font-size:11px;color:#8A92A6">paid 15 Jun</div></div><span style="color:#8A92A6">€11,962.40</span></div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:14px"><div style="flex:1;border:1px solid #E3E7EF;text-align:center;font-size:12px;font-weight:600;color:#0D1B3E;padding:9px;border-radius:8px">View invoice</div><div style="flex:1;border:1px solid #E3E7EF;text-align:center;font-size:12px;font-weight:600;color:#0D1B3E;padding:9px;border-radius:8px">Download PDF</div></div>
+        </div>
+        <!-- optimize AI -->
+        <div style="background:linear-gradient(90deg,#EEF3FF,#F6F1FF);border:1px solid #D8E2FA;border-radius:12px;padding:16px 18px">
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="#1A56DB"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#0D1B3E">OPTIMIZE MY PRODUCTS</div></div>
+          <div style="font-size:12.5px;line-height:1.55;color:#3A4358">31 of your 86 mobile subscriptions used <b>under 20% of their data</b> for 3 months. Switching them to Business Mobile S saves <b style="color:#0FA968">€248/mo</b> — same numbers, no contract reset. <div style="margin-top:8px"><span style="color:#1A56DB;font-weight:600">Review the 31 lines →</span></div></div>
+        </div>
+        <!-- usage -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="font-size:14px;font-weight:700;color:#0D1B3E;margin-bottom:12px">Usage this month</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:12px;color:#3A4358">
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span>Mobile data pool</span><b>1.42 / 2 TB</b></div><div style="height:6px;border-radius:99px;background:#E9EDF5;overflow:hidden"><div style="width:71%;height:100%;background:#1A56DB;border-radius:99px"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span>IoT messages (Analytics)</span><b>3.1 / 5 M</b></div><div style="height:6px;border-radius:99px;background:#E9EDF5;overflow:hidden"><div style="width:62%;height:100%;background:#5B8EF2;border-radius:99px"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span>SD-WAN premium traffic</span><b style="color:#B45309">92%</b></div><div style="height:6px;border-radius:99px;background:#E9EDF5;overflow:hidden"><div style="width:92%;height:100%;background:#E8A23F;border-radius:99px"></div></div><div style="font-size:10.5px;color:#8A92A6;margin-top:4px">On pace to hit the cap ~28 Jul — consider the next tier</div></div>
+          </div>
+        </div>
+        <!-- org hierarchy -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px"><div style="font-size:14px;font-weight:700;color:#0D1B3E">Organization</div><div style="font-size:12px;font-weight:600;color:#1A56DB">Manage →</div></div>
+          <div style="font-size:12.5px;color:#3A4358;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:9px;padding:6px 0"><div style="width:24px;height:24px;border-radius:6px;background:#0D1B3E;color:#fff;display:grid;place-items:center;font:700 10px sans-serif">HQ</div><b style="color:#0D1B3E">Aurora Retail Group GmbH</b><span style="margin-left:auto;font-size:10.5px;color:#8A92A6">BA-100442</span></div>
+            <div style="display:flex;align-items:center;gap:9px;padding:6px 0 6px 16px;border-left:2px solid #E9EDF5;margin-left:11px"><div style="width:20px;height:20px;border-radius:5px;background:#EAF0FE;color:#1A56DB;display:grid;place-items:center;font:700 9px sans-serif">GR</div>Branch Graz <span style="margin-left:auto;font-size:10.5px;color:#8A92A6">12 stores · own billing</span></div>
+            <div style="display:flex;align-items:center;gap:9px;padding:6px 0 6px 16px;border-left:2px solid #E9EDF5;margin-left:11px"><div style="width:20px;height:20px;border-radius:5px;background:#EAF0FE;color:#1A56DB;display:grid;place-items:center;font:700 9px sans-serif">LZ</div>Branch Linz <span style="margin-left:auto;font-size:10.5px;color:#8A92A6">plant + 4 stores</span></div>
+            <div style="display:flex;align-items:center;gap:9px;padding:6px 0 6px 16px;border-left:2px solid #E9EDF5;margin-left:11px"><div style="width:20px;height:20px;border-radius:5px;background:#EAF0FE;color:#1A56DB;display:grid;place-items:center;font:700 9px sans-serif">SZ</div>Branch Salzburg <span style="margin-left:auto;font-size:10.5px;color:#8A92A6">onboarding</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section data-label="Bill Analyzer" data-speaker-notes="Read-only invoice mirrored from billing, with Bill Analyzer explaining every delta in plain language and payment history." style="background:#F6F7FA;display:flex;align-items:flex-start;justify-content:center;padding:40px">
+  <div style="width:1280px;transform:scale(1.15);transform-origin:top center;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(4,12,36,.3)">
+  <div style="background:#fff">
+  <div style="display:flex;align-items:center;gap:28px;padding:0 40px;height:64px;border-bottom:1px solid #E3E7EF;background:#fff">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:7px;background:#0D1B3E;color:#fff;display:grid;place-items:center;font:800 14px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 16px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Northlink <span style="font-weight:500;color:#5A6478">Business</span></div></div>
+    <div style="display:flex;align-items:center;gap:24px;font-size:13.5px;font-weight:500;color:#3A4358"><span>Marketplace</span><span style="color:#0D1B3E;font-weight:600;border-bottom:2px solid #1A56DB;padding:21px 0">My account</span><span>Support</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:14px"><div style="display:flex;align-items:center;gap:8px;border:1px solid #E3E7EF;border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600;color:#0D1B3E">Aurora Retail Group <span style="color:#8A92A6">▾</span></div><div style="width:32px;height:32px;border-radius:99px;background:#EAF0FE;color:#1A56DB;display:grid;place-items:center;font-size:12px;font-weight:700">AK</div></div>
+  </div>
+  <div style="display:flex;gap:24px;padding:0 40px;border-bottom:1px solid #E3E7EF;background:#fff;font-size:13px;font-weight:600;color:#5A6478">
+    <span style="padding:13px 0">Overview</span><span style="padding:13px 0">Products &amp; services</span><span style="padding:13px 0">Orders</span><span style="color:#1A56DB;border-bottom:2px solid #1A56DB;padding:13px 0">Invoices &amp; payments</span><span style="padding:13px 0">Usage</span><span style="padding:13px 0">Tickets</span><span style="padding:13px 0">Organization</span>
+  </div>
+  <div style="background:#F6F7FA;padding:28px 40px 44px">
+    <div style="display:grid;grid-template-columns:1fr 370px;gap:24px;align-items:start">
+      <div>
+        <!-- invoice header -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:24px 26px;margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:18px">
+            <div><div style="font:700 19px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Invoice — June 2026</div><div style="font-size:12px;color:#8A92A6;margin-top:3px">INV-2026-06-4471 · billing account BA-100442 · issued 1 Jul · due 15 Jul · autopay SEPA</div></div>
+            <div style="display:flex;gap:8px;align-items:center"><span style="font-size:11px;font-weight:700;color:#976A0F;background:#FDF2D9;padding:4px 11px;border-radius:99px">DUE 15 JUL</span><div style="border:1px solid #E3E7EF;background:#fff;font-size:12.5px;font-weight:600;color:#0D1B3E;padding:9px 14px;border-radius:8px">Download PDF</div></div>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:14px"><span style="font:800 34px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">€12,481.20</span><span style="font-size:13px;color:#B45309;font-weight:600">▲ €1,238.40 vs May</span></div>
+        </div>
+        <!-- line groups -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:2.4fr 1fr 1fr;padding:11px 24px;background:#FAFBFD;border-bottom:1px solid #EEF0F5;font-size:10.5px;font-weight:700;letter-spacing:.07em;color:#8A92A6"><span>SERVICE GROUP</span><span>MAY</span><span style="text-align:right">JUNE</span></div>
+          <div style="display:grid;grid-template-columns:2.4fr 1fr 1fr;padding:14px 24px;border-bottom:1px solid #EEF0F5;font-size:13px;align-items:center"><div><b style="color:#0D1B3E">Business Mobile 5G</b><div style="font-size:11px;color:#8A92A6">86 subscriptions</div></div><span style="color:#8A92A6">€2,322.00</span><b style="text-align:right;color:#0D1B3E">€2,322.00</b></div>
+          <div style="display:grid;grid-template-columns:2.4fr 1fr 1fr;padding:14px 24px;border-bottom:1px solid #EEF0F5;font-size:13px;align-items:center;background:#FFFDF6"><div><b style="color:#0D1B3E">SD-WAN Branch Connect</b><div style="font-size:11px;color:#B45309">incl. €412.80 premium-traffic overage</div></div><span style="color:#8A92A6">€480.00</span><b style="text-align:right;color:#B45309">€892.80</b></div>
+          <div style="display:grid;grid-template-columns:2.4fr 1fr 1fr;padding:14px 24px;border-bottom:1px solid #EEF0F5;font-size:13px;align-items:center;background:#FFFDF6"><div><b style="color:#0D1B3E">Smart Venue Analytics</b><div style="font-size:11px;color:#B45309">12 stores for a full month (May: 6 stores, pro-rated)</div></div><span style="color:#8A92A6">€394.40</span><b style="text-align:right;color:#B45309">€1,020.00</b></div>
+          <div style="display:grid;grid-template-columns:2.4fr 1fr 1fr;padding:14px 24px;border-bottom:1px solid #EEF0F5;font-size:13px;align-items:center"><div><b style="color:#0D1B3E">Fixed &amp; internet services</b><div style="font-size:11px;color:#8A92A6">fibre, voice, hosting</div></div><span style="color:#8A92A6">€6,180.00</span><b style="text-align:right;color:#0D1B3E">€6,166.40</b></div>
+          <div style="display:grid;grid-template-columns:2.4fr 1fr 1fr;padding:14px 24px;font-size:13px;align-items:center"><div><b style="color:#0D1B3E">VAT (20%)</b></div><span style="color:#8A92A6">€1,993.73</span><b style="text-align:right;color:#0D1B3E">€2,080.00</b></div>
+        </div>
+        <div style="font-size:11.5px;color:#8A92A6;margin-top:12px">Billing data is provided by Northlink's billing system and is read-only here. Questions about a charge? Use "Explain" or raise a billing ticket.</div>
+      </div>
+      <!-- bill analyzer -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:linear-gradient(180deg,#0A1633,#12244E);border-radius:12px;padding:22px 24px;color:#fff">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="#9FC0FF"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg><div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#9FC0FF">BILL ANALYZER</div></div>
+          <div style="font:700 16px/1.4 'Schibsted Grotesk',sans-serif;margin-bottom:10px">Why is June €1,238 higher?</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;line-height:1.5;color:#C7D3EE">
+            <div style="display:flex;gap:10px"><b style="color:#fff;flex:none">€625.60</b>Smart Venue Analytics: May was 6 stores pro-rated; June is all 12 for a full month. <span style="color:#9FC0FF">Expected — matches your rollout.</span></div>
+            <div style="display:flex;gap:10px"><b style="color:#fff;flex:none">€412.80</b>SD-WAN premium-traffic overage — traffic grew 3 straight months. <span style="color:#9FC0FF">The next tier costs €180/mo more and would have saved €232 in June.</span></div>
+            <div style="display:flex;gap:10px"><b style="color:#fff;flex:none">€86.27</b>Higher VAT following the above.</div>
+            <div style="display:flex;gap:10px"><b style="color:#fff;flex:none">€113.73</b>Remainder: rounding &amp; one-day billing-period difference.</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:16px"><div style="background:#fff;color:#0D1B3E;font-size:12px;font-weight:700;padding:9px 14px;border-radius:8px">Fix the overage — see tiers</div><div style="border:1px solid rgba(255,255,255,.3);color:#fff;font-size:12px;font-weight:600;padding:9px 14px;border-radius:8px">Looks wrong — raise ticket</div></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 22px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:12px">PAYMENT HISTORY</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:12.5px;color:#3A4358">
+            <div style="display:flex;justify-content:space-between"><span>May 2026 · €11,962.40</span><span style="font-size:10px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:2px 8px;border-radius:99px">PAID</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Apr 2026 · €11,890.16</span><span style="font-size:10px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:2px 8px;border-radius:99px">PAID</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Mar 2026 · €11,712.88</span><span style="font-size:10px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:2px 8px;border-radius:99px">PAID</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section data-label="Re-skin: Volt" data-speaker-notes="White-label proof #1: Volt tenant, token swap only — same shopfront components, new brand tokens (primary, hero surface, radius, logo)." style="background:#0C231C;display:flex;align-items:flex-start;justify-content:center;padding:40px">
+  <div style="width:1280px;transform:scale(1.32);transform-origin:top center;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(4,12,36,.3)">
+  <div style="background:#fff">
+  <div style="display:flex;align-items:center;gap:28px;padding:0 40px;height:64px;border-bottom:1px solid #E2E8E2;background:#fff">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:28px;height:28px;border-radius:99px;background:#0E8A6D;color:#fff;display:grid;place-items:center;font:800 14px 'Schibsted Grotesk',sans-serif">V</div>
+      <div style="font:700 16px 'Schibsted Grotesk',sans-serif;color:#122B24">volt <span style="font-weight:500;color:#5E6E67">business</span></div>
+    </div>
+    <div style="display:flex;gap:24px;font-size:13.5px;font-weight:500;color:#42524B"><span style="color:#122B24;font-weight:600">Solutions</span><span>Marketplace</span><span>Partners</span><span>Support</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:18px"><span style="font-size:13px;font-weight:600;color:#42524B">EN</span><div style="background:#0E8A6D;color:#fff;font-size:13px;font-weight:600;padding:9px 16px;border-radius:99px">Sign in</div></div>
+  </div>
+  <div style="background:linear-gradient(180deg,#0C231C 0%,#123528 100%);padding:64px 40px 56px;position:relative;overflow:hidden">
+    <div style="position:absolute;right:-120px;top:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(198,242,78,.14),transparent 65%)"></div>
+    <div style="max-width:760px;margin:0 auto;text-align:center;position:relative">
+      <div style="display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;color:#C6F24E;letter-spacing:.04em"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C6F24E"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>VOLT AI · PRODUCT MATCHMAKER</div>
+      <h1 style="font:800 42px/1.12 'Schibsted Grotesk',sans-serif;color:#fff;margin:18px 0 12px;letter-spacing:-.015em">Tell us what your business needs.<br>We'll match the solution.</h1>
+      <p style="font-size:16px;line-height:1.55;color:#A9C0B4;margin:0 0 28px">Enterprise 5G, IoT and edge — from Volt and certified partners.</p>
+      <div style="background:#fff;border-radius:99px;padding:8px 8px 8px 22px;display:flex;align-items:center;gap:14px;box-shadow:0 18px 48px rgba(5,20,14,.5);text-align:left">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0E8A6D" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+        <div style="flex:1;font-size:15px;color:#42524B">We're opening <b>12 retail stores</b> and need connectivity, footfall analytics and…</div>
+        <div style="background:#C6F24E;color:#122B24;font-size:14px;font-weight:700;padding:12px 24px;border-radius:99px">Match me</div>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap">
+        <div style="border:1px solid rgba(255,255,255,.18);color:#C9DCD2;font-size:12.5px;padding:7px 14px;border-radius:99px">Private 5G for a factory</div>
+        <div style="border:1px solid rgba(255,255,255,.18);color:#C9DCD2;font-size:12.5px;padding:7px 14px;border-radius:99px">Connect 2,000 vehicles</div>
+        <div style="border:1px solid rgba(255,255,255,.18);color:#C9DCD2;font-size:12.5px;padding:7px 14px;border-radius:99px">Or browse the catalog →</div>
+      </div>
+    </div>
+  </div>
+  <!-- token map -->
+  <div style="background:#fff;padding:22px 40px 26px;display:flex;gap:34px;align-items:center;border-top:1px solid #E2E8E2">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#8A968F;flex:none">TOKEN SWAP</div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;font-size:12px;color:#42524B">
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:4px;background:#1A56DB"></span>→<span style="width:14px;height:14px;border-radius:4px;background:#0E8A6D"></span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px">--brand-primary</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:4px;background:#0A1633"></span>→<span style="width:14px;height:14px;border-radius:4px;background:#0C231C"></span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px">--surface-hero</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:4px;background:#9FC0FF"></span>→<span style="width:14px;height:14px;border-radius:4px;background:#C6F24E"></span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px">--brand-accent</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:22px;height:14px;border-radius:4px;border:1.5px solid #C9CFDC"></span>→<span style="width:22px;height:14px;border-radius:99px;border:1.5px solid #C9CFDC"></span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px">--radius-action: 9px → 999px</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:4px;background:#0D1B3E;display:grid;place-items:center;color:#fff;font:800 9px 'Schibsted Grotesk',sans-serif">N</span>→<span style="width:14px;height:14px;border-radius:99px;background:#0E8A6D;display:grid;place-items:center;color:#fff;font:800 9px 'Schibsted Grotesk',sans-serif">V</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px">logo slot</span></div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section data-label="Re-skin: Bergnet" data-speaker-notes="White-label proof #2: Bergnet channel partner storefront studio — brand tokens, own bundle pricing with floor enforcement, live preview." style="background:#F6F7FA;display:flex;align-items:flex-start;justify-content:center;padding:40px">
+  <div style="width:1280px;transform:scale(1.0);transform-origin:top center;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(4,12,36,.3)">
+  <div style="background:#fff">
+<div style="display:grid;grid-template-columns:222px 1fr;min-height:720px">
+  <!-- sidebar -->
+  <div style="background:#0A1633;padding:22px 16px;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 22px"><div style="width:26px;height:26px;border-radius:6px;background:#fff;color:#0D1B3E;display:grid;place-items:center;font:800 13px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 14px 'Schibsted Grotesk',sans-serif;color:#fff">Channel Portal</div></div>
+    <div style="display:flex;flex-direction:column;gap:2px;font-size:13px;font-weight:500;color:#AAB6D4">
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="1.5"></rect><rect x="13" y="3" width="8" height="5" rx="1.5"></rect><rect x="13" y="10" width="8" height="11" rx="1.5"></rect><rect x="3" y="13" width="8" height="8" rx="1.5"></rect></svg>Dashboard</div>
+      <div style="display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.1);color:#fff;font-weight:600;border-radius:8px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"></path></svg>Storefront studio</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M21 16V8l-9-5-9 5v8l9 5z"></path><path d="M3.3 7.5L12 12l8.7-4.5M12 22V12"></path></svg>Catalog &amp; pricing</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"></path><circle cx="9" cy="7" r="4"></circle></svg>Customers</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect></svg>Orders</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>Margin &amp; settlement</div>
+    </div>
+    <div style="margin-top:auto;border-top:1px solid rgba(255,255,255,.12);padding-top:14px;display:flex;align-items:center;gap:10px;padding-left:8px"><div style="width:30px;height:30px;border-radius:8px;background:#B4530A;color:#fff;display:grid;place-items:center;font:700 11px sans-serif">BG</div><div><div style="font-size:12.5px;font-weight:600;color:#fff">Bergnet GmbH</div><div style="font-size:10.5px;color:#7E8CB0">Channel partner · tenant</div></div></div>
+  </div>
+  <!-- main -->
+  <div style="background:#F6F7FA">
+    <div style="display:flex;align-items:center;gap:16px;padding:0 32px;height:60px;border-bottom:1px solid #E3E7EF;background:#fff">
+      <div style="font:700 16px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Storefront studio</div>
+      <span style="font-size:11px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:3px 9px;border-radius:99px">LIVE · shop.bergnet.at</span>
+      <div style="margin-left:auto;display:flex;gap:12px"><div style="border:1px solid #E3E7EF;background:#fff;color:#0D1B3E;font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:8px">Preview as customer</div><div style="background:#1A56DB;color:#fff;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:8px">Publish changes</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:380px 1fr;gap:0">
+      <!-- controls -->
+      <div style="background:#fff;border-right:1px solid #E3E7EF;padding:24px 26px;display:flex;flex-direction:column;gap:22px">
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:12px">BRAND TOKENS</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:12.5px;color:#3A4358">
+            <div style="display:flex;align-items:center;justify-content:space-between"><span>Primary</span><div style="display:flex;gap:6px"><span style="width:22px;height:22px;border-radius:6px;background:#B4530A;outline:2px solid #0D1B3E;outline-offset:2px"></span><span style="width:22px;height:22px;border-radius:6px;background:#1A56DB"></span><span style="width:22px;height:22px;border-radius:6px;background:#0E8A6D"></span><span style="width:22px;height:22px;border-radius:6px;background:#6D28D9"></span></div></div>
+            <div style="display:flex;align-items:center;justify-content:space-between"><span>Hero surface</span><div style="display:flex;gap:6px"><span style="width:22px;height:22px;border-radius:6px;background:#241505;outline:2px solid #0D1B3E;outline-offset:2px"></span><span style="width:22px;height:22px;border-radius:6px;background:#0A1633"></span><span style="width:22px;height:22px;border-radius:6px;background:#F6F7FA;border:1px solid #E3E7EF"></span></div></div>
+            <div style="display:flex;align-items:center;justify-content:space-between"><span>Corner radius</span><div style="display:flex;border:1px solid #E3E7EF;border-radius:8px;overflow:hidden;font-size:11.5px;font-weight:600"><span style="padding:6px 12px;color:#8A92A6">Sharp</span><span style="padding:6px 12px;background:#0D1B3E;color:#fff">Soft</span><span style="padding:6px 12px;color:#8A92A6">Round</span></div></div>
+            <div style="display:flex;align-items:center;justify-content:space-between"><span>Logo</span><div style="display:flex;align-items:center;gap:8px;border:1px solid #E3E7EF;border-radius:8px;padding:6px 10px"><div style="width:20px;height:20px;border-radius:5px;background:#B4530A;color:#fff;display:grid;place-items:center;font:800 10px 'Schibsted Grotesk',sans-serif">B</div><span style="font-size:11.5px;font-weight:600;color:#0D1B3E">bergnet-logo.svg</span><span style="font-size:11px;color:#1A56DB;font-weight:600">Replace</span></div></div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #EEF0F5;padding-top:18px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:12px">CATALOG &amp; YOUR PRICING</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:1px solid #EEF0F5;border-radius:10px;padding:12px 14px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:4px;background:#1A56DB;display:grid;place-items:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div><b style="font-size:12.5px;color:#0D1B3E">SD-WAN Branch Connect</b></div><span style="font-size:10px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:2px 7px;border-radius:5px">NORTHLINK</span></div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#5A6478">Buy €120 → sell <div style="border:1px solid #C9CFDC;border-radius:6px;padding:3px 8px;font-weight:700;color:#0D1B3E">€149</div>/site/mo <span style="margin-left:auto;color:#0FA968;font-weight:700">24% margin</span></div>
+            </div>
+            <div style="border:1px solid #EEF0F5;border-radius:10px;padding:12px 14px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:4px;background:#1A56DB;display:grid;place-items:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div><b style="font-size:12.5px;color:#0D1B3E">Business Mobile 5G</b></div><span style="font-size:10px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:2px 7px;border-radius:5px">NORTHLINK</span></div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#5A6478">Buy €22 → sell <div style="border:1px solid #C9CFDC;border-radius:6px;padding:3px 8px;font-weight:700;color:#0D1B3E">€27</div>/sub/mo <span style="margin-left:auto;color:#0FA968;font-weight:700">23% margin</span></div>
+            </div>
+            <div style="border:1px solid #EEF0F5;border-radius:10px;padding:12px 14px;background:#FBFCFE">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:4px;background:#1A56DB;display:grid;place-items:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div><b style="font-size:12.5px;color:#0D1B3E">Bergnet Office Bundle</b></div><span style="font-size:10px;font-weight:700;color:#B45309;background:#FEF3E2;padding:2px 7px;border-radius:5px">OWN BUNDLE</span></div>
+              <div style="font-size:11.5px;color:#5A6478;line-height:1.5">Mobile + SD-WAN + your on-site support, repackaged · <div style="display:inline-block;border:1px solid #C9CFDC;border-radius:6px;padding:3px 8px;font-weight:700;color:#0D1B3E;font-size:11.5px">€219</div>/site/mo <span style="color:#0FA968;font-weight:700">31% margin</span></div>
+            </div>
+            <div style="border:1px solid #EEF0F5;border-radius:10px;padding:12px 14px;opacity:.6">
+              <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:9px"><div style="width:15px;height:15px;border-radius:4px;border:1.5px solid #C9CFDC"></div><b style="font-size:12.5px;color:#0D1B3E">Private 5G Campus</b></div><span style="font-size:11px;color:#8A92A6">not resold</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #EEF0F5;padding-top:16px;font-size:11.5px;color:#8A92A6;line-height:1.6">Floor prices and mandatory terms are enforced by Northlink's agreement AGR-CH-011 — you can't publish below buy price.</div>
+      </div>
+      <!-- live preview -->
+      <div style="padding:26px 30px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:11.5px;color:#8A92A6"><span style="font-weight:700;letter-spacing:.08em">LIVE PREVIEW</span><span>— your customers see Bergnet only; Northlink stays invisible</span></div>
+        <!-- mini storefront -->
+        <div style="border:1px solid #E3E7EF;border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(13,27,62,.12)">
+          <div style="display:flex;align-items:center;gap:8px;background:#F3F5F9;border-bottom:1px solid #E3E7EF;padding:8px 14px"><span style="width:9px;height:9px;border-radius:99px;background:#E3E7EF"></span><span style="width:9px;height:9px;border-radius:99px;background:#E3E7EF"></span><span style="width:9px;height:9px;border-radius:99px;background:#E3E7EF"></span><div style="margin-left:10px;background:#fff;border:1px solid #E3E7EF;border-radius:6px;font-size:10.5px;color:#5A6478;padding:4px 12px;flex:1;max-width:280px">shop.bergnet.at</div></div>
+          <div style="display:flex;align-items:center;gap:22px;padding:0 28px;height:52px;border-bottom:1px solid #EEE7DF;background:#fff">
+            <div style="display:flex;align-items:center;gap:8px"><div style="width:22px;height:22px;border-radius:6px;background:#B4530A;color:#fff;display:grid;place-items:center;font:800 11px 'Schibsted Grotesk',sans-serif">B</div><div style="font:700 13.5px 'Schibsted Grotesk',sans-serif;color:#241505">bergnet <span style="font-weight:500;color:#8A7A6A">business</span></div></div>
+            <div style="display:flex;gap:16px;font-size:11.5px;font-weight:500;color:#5A4A3A"><span style="color:#241505;font-weight:600">Solutions</span><span>Support</span></div>
+            <div style="margin-left:auto;background:#B4530A;color:#fff;font-size:11px;font-weight:600;padding:7px 13px;border-radius:8px">Sign in</div>
+          </div>
+          <div style="background:linear-gradient(180deg,#241505,#3A2408);padding:36px 28px;text-align:center">
+            <div style="display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:5px 12px;font-size:10px;font-weight:600;color:#F2C08A;letter-spacing:.05em"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F2C08A"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>BERGNET AI · FIND MY SOLUTION</div>
+            <div style="font:800 26px/1.2 'Schibsted Grotesk',sans-serif;color:#fff;margin:14px 0 8px">Connectivity for Alpine business.</div>
+            <div style="font-size:12px;color:#D9C5AC;margin-bottom:18px">Mobile, branch networking and bundles — with local support from Innsbruck.</div>
+            <div style="background:#fff;border-radius:10px;padding:8px 8px 8px 14px;display:flex;align-items:center;gap:10px;max-width:440px;margin:0 auto;text-align:left"><div style="flex:1;font-size:11.5px;color:#8A7A6A">Describe what your business needs…</div><div style="background:#B4530A;color:#fff;font-size:11px;font-weight:600;padding:8px 14px;border-radius:7px">Match me</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px 28px 24px;background:#FBF8F4">
+            <div style="background:#fff;border:1px solid #EEE7DF;border-radius:10px;padding:14px"><div style="font-size:9.5px;font-weight:700;color:#B4530A;background:#F9EDE2;display:inline-block;padding:2px 7px;border-radius:4px;margin-bottom:8px">BERGNET</div><div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;color:#241505;margin-bottom:3px">Office Bundle</div><div style="font-size:10.5px;color:#8A7A6A">from <b style="color:#241505">€219</b>/site/mo</div></div>
+            <div style="background:#fff;border:1px solid #EEE7DF;border-radius:10px;padding:14px"><div style="font-size:9.5px;font-weight:700;color:#B4530A;background:#F9EDE2;display:inline-block;padding:2px 7px;border-radius:4px;margin-bottom:8px">NETWORK</div><div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;color:#241505;margin-bottom:3px">Branch Connect</div><div style="font-size:10.5px;color:#8A7A6A">from <b style="color:#241505">€149</b>/site/mo</div></div>
+            <div style="background:#fff;border:1px solid #EEE7DF;border-radius:10px;padding:14px"><div style="font-size:9.5px;font-weight:700;color:#B4530A;background:#F9EDE2;display:inline-block;padding:2px 7px;border-radius:4px;margin-bottom:8px">MOBILE</div><div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;color:#241505;margin-bottom:3px">Business Mobile 5G</div><div style="font-size:10.5px;color:#8A7A6A">from <b style="color:#241505">€27</b>/sub/mo</div></div>
+          </div>
+        </div>
+        <div style="font-size:11.5px;color:#8A92A6;line-height:1.6">Same shopfront components as Northlink's marketplace — re-skinned by tenant tokens (primary, hero surface, radius, logo). Orders placed here flow into Northlink's order orchestration; Bergnet keeps the customer relationship.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

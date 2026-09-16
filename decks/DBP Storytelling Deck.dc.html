@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A1633;font-family:'Instrument Sans',system-ui,sans-serif}
+.ph{border:2px dashed rgba(13,27,62,.25);background:rgba(13,27,62,.03)}
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+<!-- 1 COVER -->
+<section data-label="Cover" data-speaker-notes="Opening frame: the operator today is a passive observer in its own partner ecosystem — notified after the fact. Our pitch: move from passive observer to orchestrator, with the Process Integration Layer as the mechanism." style="background:linear-gradient(180deg,#0A1633 0%,#0D1B3E 65%,#12244E 100%);color:#fff;display:flex;flex-direction:column;padding:100px 120px;position:relative;overflow:hidden" data-om-slide-id="56e68451">
+  <div style="position:absolute;right:-200px;top:-260px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(46,108,255,.22),transparent 65%)"></div>
+  <div style="display:flex;align-items:center;gap:16px;position:relative">
+    <div style="width:52px;height:52px;border-radius:12px;background:#fff;color:#0D1B3E;display:grid;place-items:center;font:800 26px 'Schibsted Grotesk',sans-serif">N</div>
+    <div style="font:700 28px 'Schibsted Grotesk',sans-serif">Digital Business Platform</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;max-width:1400px">
+    <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:10px 22px;font-size:24px;font-weight:600;color:#9FC0FF;letter-spacing:.06em;align-self:flex-start;margin-bottom:36px">TAKING CONTROL OF YOUR PARTNER ECOSYSTEM</div>
+    <h1 style="font:800 88px/1.08 'Schibsted Grotesk',sans-serif;margin:0 0 28px;letter-spacing:-.015em">From the sidelines to the orchestrator.</h1>
+    <p style="font-size:30px;line-height:1.5;color:#AAB6D4;margin:0;max-width:1150px">Why the operator must step back into the middle of every partner relationship — and how a Process Integration Layer makes it possible without rebuilding the core.</p>
+  </div>
+  <div style="display:flex;gap:48px;font-size:24px;color:#7E8CB0;position:relative">
+    <span>Client working session · Strategy narrative</span><span style="margin-left:auto">July 2026</span>
+  </div>
+</section>
+
+<!-- 2 STORY MAP -->
+<section data-label="Story map" data-speaker-notes="Roadmap of the narrative: four acts. Sets expectations for the meeting structure." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:90px 120px" data-om-slide-id="2b454102">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:18px">HOW WE'LL WALK THROUGH THIS</div>
+  <h2 style="font:800 56px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 56px;letter-spacing:-.015em">Four acts, one decision at the end.</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px;flex:1">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:40px 34px;display:flex;flex-direction:column;gap:16px">
+      <div style="font:800 24px 'Schibsted Grotesk',sans-serif;color:#7E8CB0">ACT I</div>
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">The cost of standing aside</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Where you are today, and why it stops scaling as partners multiply.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:40px 34px;display:flex;flex-direction:column;gap:16px">
+      <div style="font:800 24px 'Schibsted Grotesk',sans-serif;color:#7E8CB0">ACT II</div>
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">The strategic shift</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Reclaiming the middle of the relationship, and the layer that makes it safe.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:40px 34px;display:flex;flex-direction:column;gap:16px">
+      <div style="font:800 24px 'Schibsted Grotesk',sans-serif;color:#7E8CB0">ACT III</div>
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">The new operating model</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">What control actually looks like, stage by stage, channel by channel.</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:20px;padding:40px 34px;display:flex;flex-direction:column;gap:16px;color:#fff">
+      <div style="font:800 24px 'Schibsted Grotesk',sans-serif;color:#9FC0FF">ACT IV</div>
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">Getting there</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">A phased path, what changes internally, and what we need from you to start.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 ACT I DIVIDER -->
+<section data-label="Act I" data-speaker-notes="Section divider." style="background:#0A1633;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:100px 120px;position:relative;overflow:hidden" data-om-slide-id="a212ed19">
+  <div style="position:absolute;left:-160px;bottom:-220px;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(46,108,255,.18),transparent 65%)"></div>
+  <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;letter-spacing:.1em;margin-bottom:20px">ACT I</div>
+  <h2 style="font:800 76px/1.1 'Schibsted Grotesk',sans-serif;margin:0;max-width:1400px;letter-spacing:-.015em">The cost of standing aside</h2>
+</section>
+
+<!-- 4 TODAY: SIDELINED MODEL -->
+<section data-label="Today · sidelined model" data-speaker-notes="Diagram: client and partner deal directly. Telco sees the relationship only after the fact, via a file or notification, and has no seat in discovery, subscription or entitlement. Frame this as the root problem, not any one process step." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="6b4f7136">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:14px">TODAY'S MODEL</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 44px;letter-spacing:-.015em">You are notified after the relationship already happened.</h2>
+  <div style="display:flex;align-items:center;gap:0;flex:1">
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:36px;text-align:center">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">Client</div>
+      <div style="font-size:24px;color:#5A6478">Discovers, subscribes, manages directly in the partner's world</div>
+    </div>
+    <div style="flex:0 0 140px;display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="font-size:24px;font-weight:700;color:#1A56DB">direct relationship</div>
+      <svg width="100" height="24" viewBox="0 0 100 24"><line x1="0" y1="12" x2="90" y2="12" stroke="#1A56DB" stroke-width="3"></line><path d="M90 4l14 8-14 8" fill="none" stroke="#1A56DB" stroke-width="3"></path></svg>
+    </div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:36px;text-align:center">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">Partner (Microsoft, Google, Palo Alto…)</div>
+      <div style="font-size:24px;color:#5A6478">Owns catalog, subscription, entitlement, support — on its own console</div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center;margin:14px 0 18px">
+    <svg width="24" height="60" viewBox="0 0 24 60"><line x1="12" y1="0" x2="12" y2="45" stroke="#B3261E" stroke-width="3" stroke-dasharray="6 6"></line><path d="M4 45l8 14 8-14" fill="none" stroke="#B3261E" stroke-width="3"></path></svg>
+  </div>
+  <div style="font-size:24px;font-weight:700;letter-spacing:.08em;color:#B3261E;text-align:center;margin-bottom:14px">SIX STAGES HAPPEN OUTSIDE YOUR VIEW</div>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:22px">
+    <div style="background:#fff;border:1px solid #F0D6D3;border-radius:12px;padding:16px 14px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">Partner onboarding</div>
+      <div style="font-size:24px;color:#5A6478;line-height:1.3">Bilateral deal, negotiated by hand</div>
+    </div>
+    <div style="background:#fff;border:1px solid #F0D6D3;border-radius:12px;padding:16px 14px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">Product onboarding</div>
+      <div style="font-size:24px;color:#5A6478;line-height:1.3">Catalog loaded manually, no sync</div>
+    </div>
+    <div style="background:#fff;border:1px solid #F0D6D3;border-radius:12px;padding:16px 14px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">Fulfillment</div>
+      <div style="font-size:24px;color:#5A6478;line-height:1.3">Subscribed in partner's console</div>
+    </div>
+    <div style="background:#fff;border:1px solid #F0D6D3;border-radius:12px;padding:16px 14px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">Invoicing</div>
+      <div style="font-size:24px;color:#5A6478;line-height:1.3">Monthly file, applied after the fact</div>
+    </div>
+    <div style="background:#fff;border:1px solid #F0D6D3;border-radius:12px;padding:16px 14px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">Care</div>
+      <div style="font-size:24px;color:#5A6478;line-height:1.3">Triage only, no proactive view</div>
+    </div>
+    <div style="background:#fff;border:1px solid #F0D6D3;border-radius:12px;padding:16px 14px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">Settlement</div>
+      <div style="font-size:24px;color:#5A6478;line-height:1.3">Reconciled from the same file</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:30px 44px;display:flex;align-items:center;gap:24px">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#FBE1DF" style="flex:none"><circle cx="12" cy="12" r="10"></circle></svg>
+    <div style="font-size:26px;line-height:1.45;color:#fff"><b>The operator's role:</b> a monthly file drop, a reconciliation task, a support escalation. No visibility into the relationship while it's happening — only its paper trail afterward.</div>
+  </div>
+</section>
+
+<!-- 5 THIS DOESN'T SCALE -->
+<section data-label="Why this doesn't scale" data-speaker-notes="Each big tech partner has its own onboarding, catalog format, subscription API, billing cycle and support model. Bilateral, bespoke integration per partner. As partner count grows this becomes combinatorial complexity landing directly on the core IT stack." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="d82941f8">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:14px">WHY IT BREAKS DOWN</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 40px;letter-spacing:-.015em">Every big tech runs its own playbook. Today you integrate with each, one at a time.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;flex:1">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">Microsoft</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Own catalog feed, CSP subscription model, its own lifecycle and billing cadence.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">Google</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Different marketplace semantics, different entitlement and usage-reporting model.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">Palo Alto</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Security-product provisioning and renewal logic, again its own shape entirely.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:30px 44px;margin-top:8px;display:flex;align-items:center;gap:24px">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:26px;line-height:1.45;color:#fff"><b>Every new partner today means a new bespoke integration into your CRM B2B and marketplace.</b> That cost compounds — and it's the reason expansion stalls.</div>
+  </div>
+</section>
+
+<!-- 6 BUSINESS COST -->
+<section data-label="What it costs the business" data-speaker-notes="Translate the technical gap into business consequences: no visibility for the operator's own care/sales teams, no leverage to negotiate or bundle, brand risk when things go wrong on partner's turf, and a core IT stack that absorbs every partner's idiosyncrasies directly." style="background:#0A1633;color:#fff;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="6f311006">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9FC0FF;margin-bottom:14px">THE BUSINESS COST</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 44px;letter-spacing:-.015em">Standing aside isn't neutral — it has a price.</h2>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;flex:1">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:32px 34px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">No visibility</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">Your own sales and care teams can't see what a client actually has active with a partner today.</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:32px 34px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">No commercial leverage</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">You can't bundle, cross-sell or renegotiate terms on a relationship you don't own operationally.</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:32px 34px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">Brand exposure</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">When something breaks on the partner's console, the client still calls you first — with none of your tools to fix it.</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:32px 34px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">A core stack under strain</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">Every partner's idiosyncrasies land directly on the CRM B2B and marketplace — coupling grows with every deal.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 ACT II DIVIDER -->
+<section data-label="Act II" data-speaker-notes="Section divider." style="background:#0A1633;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:100px 120px;position:relative;overflow:hidden" data-om-slide-id="74174fda">
+  <div style="position:absolute;right:-160px;top:-220px;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(46,108,255,.18),transparent 65%)"></div>
+  <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;letter-spacing:.1em;margin-bottom:20px">ACT II</div>
+  <h2 style="font:800 76px/1.1 'Schibsted Grotesk',sans-serif;margin:0;max-width:1400px;letter-spacing:-.015em">The strategic shift</h2>
+</section>
+
+<!-- 8 THE SHIFT -->
+<section data-label="The shift we propose" data-speaker-notes="State the strategic thesis plainly: the operator repositions itself from a sidelined party notified after the fact to the active intermediary that manages the partner relationship on the client's behalf. This is a control decision, not just a technology one." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="6a265aaf">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:14px">THE SHIFT</div>
+  <h2 style="font:800 52px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 48px;letter-spacing:-.015em">Move from the sidelines to active intermediary.</h2>
+  <div style="display:flex;align-items:stretch;gap:32px;flex:1">
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:inline-flex;align-self:flex-start;background:#FBE1DF;color:#B3261E;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TODAY</div>
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">Client ↔ Partner</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Telco is a billing pass-through, informed after the fact.</div>
+    </div>
+    <div style="display:flex;align-items:center;font:800 40px 'Schibsted Grotesk',sans-serif;color:#7E8CB0">→</div>
+    <div style="flex:1;background:#0D1B3E;border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:16px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;letter-spacing:.04em;padding:6px 16px;border-radius:99px">TOMORROW</div>
+      <div style="font:700 30px 'Schibsted Grotesk',sans-serif">Client ↔ Telco ↔ Partner</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">Telco owns onboarding, entitlement, invoicing and care — orchestrating every partner behind one experience.</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:28px 44px;margin-top:32px">
+    <div style="font-size:25px;line-height:1.5;color:#fff"><b>This is not "integrate with more partners."</b> It's taking back the middle of the relationship — so every future partner is a configuration, not a project.</div>
+  </div>
+</section>
+
+<!-- 9 THE PIL PRINCIPLE -->
+
+
+<!-- 10 WHAT THE PIL ACTUALLY DOES -->
+<section data-label="What the PIL does" data-speaker-notes="Break down PIL responsibilities concretely across the process lifecycle: catalog ingestion &amp; normalization, subscription/order orchestration, entitlement &amp; lifecycle events, and usage/billing normalization — each mapped to a TM Forum Open API so the story stays standards-based." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="6ede0753">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:14px">INSIDE THE PIL</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 40px;letter-spacing:-.015em">Four jobs, done once, for every partner.</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;flex:1">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:32px 26px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 27px 'Schibsted Grotesk',sans-serif">Catalog ingestion</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Pulls each partner's native catalog and maps it to one internal product model.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:700;color:#1A56DB">TMF620</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:32px 26px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 27px 'Schibsted Grotesk',sans-serif">Order &amp; subscription orchestration</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Translates a single client order into whatever the partner's API or console expects.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:700;color:#1A56DB">TMF622</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:32px 26px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 27px 'Schibsted Grotesk',sans-serif">Entitlement &amp; lifecycle events</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Normalizes activation, change and cancellation events back into one client inventory.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:700;color:#1A56DB">TMF621 / TMF676</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:32px 26px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 27px 'Schibsted Grotesk',sans-serif">Usage &amp; settlement normalization</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Converts partner billing files/APIs into one revenue-share and invoicing format.</div>
+      <div style="margin-top:auto;font-size:24px;font-weight:700;color:#1A56DB">TMF678 / TMF632·651</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 PROTECTING THE CORE -->
+<section data-label="Protecting the core stack" data-speaker-notes="Directly address the mandate to decouple from CRM B2B/marketplace: the PIL is the only thing that talks to partners; the core stack only ever talks to the PIL, in the telco's own terms. New partners are additive connectors behind the PIL, never new core integrations." style="background:#0A1633;color:#fff;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="c04b0bab">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9FC0FF;margin-bottom:14px">WHY THIS PROTECTS YOU</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 44px;letter-spacing:-.015em">Your CRM B2B and marketplace should never touch a partner directly again.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;flex:1">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:34px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">Stability</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">A new partner, or a partner API change, is absorbed in the PIL — the core stack never redeploys for it.</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:34px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">Speed</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">Onboarding partner #4 is a connector, not a program — because #1 through #3 already proved the pattern.</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:34px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;margin-bottom:10px">Control</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">Standards-based (TM Forum) internal contract means governance and reporting are consistent, partner by partner.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 ACT III DIVIDER -->
+<section data-label="Act III" data-speaker-notes="Section divider." style="background:#0A1633;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:100px 120px;position:relative;overflow:hidden" data-om-slide-id="534d1397">
+  <div style="position:absolute;left:-160px;top:-220px;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(46,108,255,.18),transparent 65%)"></div>
+  <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;letter-spacing:.1em;margin-bottom:20px">ACT III</div>
+  <h2 style="font:800 76px/1.1 'Schibsted Grotesk',sans-serif;margin:0;max-width:1400px;letter-spacing:-.015em">The new operating model</h2>
+</section>
+
+<!-- 13 CONTROL, STAGE BY STAGE -->
+<section data-label="Control, stage by stage" data-speaker-notes="Reuse the six-stage lifecycle from the current-state analysis (partner onboarding, product onboarding/mod, fulfillment, invoicing, care, settlement) and show, stage by stage, who is in control today vs with the PIL. This slide can pull directly from Presentacion DBP's gap-analysis content." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px" data-om-slide-id="4708f11a">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">WHAT CHANGES, STAGE BY STAGE</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 30px;letter-spacing:-.015em">Six handoffs. One owner, going forward.</h2>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;flex:1">
+    <div class="ph" style="border-radius:14px;padding:16px 12px;display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif">Partner onboarding</div>
+      <div style="font-size:24px;color:#B3261E;font-weight:700">Today: bilateral, manual</div>
+      <div style="font-size:24px;color:#1A56DB;font-weight:700">→ Self-serve via Partner Hub</div>
+    </div>
+    <div class="ph" style="border-radius:14px;padding:16px 12px;display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif">Product onboarding</div>
+      <div style="font-size:24px;color:#B3261E;font-weight:700">Today: hand-loaded catalog</div>
+      <div style="font-size:24px;color:#1A56DB;font-weight:700">→ PIL-normalized catalog sync</div>
+    </div>
+    <div class="ph" style="border-radius:14px;padding:16px 12px;display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif">Fulfillment</div>
+      <div style="font-size:24px;color:#B3261E;font-weight:700">Today: partner console / SSO</div>
+      <div style="font-size:24px;color:#1A56DB;font-weight:700">→ Ordered &amp; tracked in Telco inventory</div>
+    </div>
+    <div class="ph" style="border-radius:14px;padding:16px 12px;display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif">Invoicing</div>
+      <div style="font-size:24px;color:#B3261E;font-weight:700">Today: monthly file, manual charge</div>
+      <div style="font-size:24px;color:#1A56DB;font-weight:700">→ Auto-rated on one bill</div>
+    </div>
+    <div class="ph" style="border-radius:14px;padding:16px 12px;display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif">Care / post-sale</div>
+      <div style="font-size:24px;color:#B3261E;font-weight:700">Today: triage + impersonation</div>
+      <div style="font-size:24px;color:#1A56DB;font-weight:700">→ One console, proactive monitoring</div>
+    </div>
+    <div class="ph" style="border-radius:14px;padding:16px 12px;display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif">Settlement</div>
+      <div style="font-size:24px;color:#B3261E;font-weight:700">Today: file-based reconciliation</div>
+      <div style="font-size:24px;color:#1A56DB;font-weight:700">→ Automated, auditable payouts</div>
+    </div>
+  </div>
+  <div style="margin-top:18px;font-size:24px;color:#7E8CB0">Placeholder — expand each column with the detailed gap-analysis content already built for the current-state case.</div>
+</section>
+
+<!-- 13A PROCESS DEEP DIVE: PARTNER ONBOARDING -->
+<section data-label="Process deep dive · Partner onboarding" data-speaker-notes="Deep-dive 1 of 6. Partner self-serves its onboarding application through Partner Hub instead of a bilateral negotiation; Partner Hub runs structured governance and approval; the PIL provisions the technical connector; the core stack and channels pick the partner up automatically once approved." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">PROCESS DEEP DIVE · 01 OF 06</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 36px;letter-spacing:-.015em">Partner onboarding, with the new stack in place.</h2>
+  <div style="display:flex;align-items:stretch;gap:0;flex:1">
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">1</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Submits its onboarding application directly — compliance docs, price list and revenue-share terms — through a self-service form.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">SELF-SERVICE APPLICATION</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#0D1B3E;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#1A56DB;color:#fff;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">2</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner Hub</div>
+      <div style="font-size:24px;line-height:1.4;color:#DCE2F2;flex:1">Runs a structured approval workflow: validates terms, sets category taxonomy and revenue-share rules — governed, not bilateral.</div>
+      <div style="font-size:24px;font-weight:700;color:#9FC0FF">GOVERNED WORKFLOW</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">3</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Process Integration Layer</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Provisions the technical connector for the partner: catalog, order and billing endpoints registered and ready.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">CONNECTOR PROVISIONING</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">4</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Core &amp; channels</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Billing concepts are created automatically; the partner is now eligible for catalog ingestion into Shopfront and Channel Portal.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">NO IT TICKET REQUIRED</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:26px 40px;margin-top:28px;display:flex;align-items:center;gap:22px">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.4;color:#fff"><b>Gap closed:</b> weeks of bilateral negotiation and IT tickets become a days-long, self-serve, governed application.</div>
+  </div>
+</section>
+
+<!-- 13B PROCESS DEEP DIVE: PRODUCT ONBOARDING -->
+<section data-label="Process deep dive · Product onboarding" data-speaker-notes="Deep-dive 2 of 6. Show how the new IT stack handles product onboarding end to end: partner publishes its native catalog, the PIL ingests and normalizes it via TMF620, Partner Hub applies commercial rules (pricing, revenue share, category mapping), and the result is published once into the core product catalog and out to every channel (Shopfront, Channel Portal) simultaneously — no manual load, no per-channel republishing." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">PROCESS DEEP DIVE · 02 OF 06</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 36px;letter-spacing:-.015em">Product onboarding &amp; modification, with the new stack in place.</h2>
+  <div style="display:flex;align-items:stretch;gap:0;flex:1">
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">1</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Publishes or updates its native catalog (SKUs, pricing, bundles) on its own side — Microsoft, Google, Palo Alto each in their own format.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">NATIVE PARTNER FORMAT</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#0D1B3E;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#1A56DB;color:#fff;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">2</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Process Integration Layer</div>
+      <div style="font-size:24px;line-height:1.4;color:#DCE2F2;flex:1">Ingests the partner catalog via its connector and normalizes it into one internal product model — categories, attributes, pricing all mapped to a common shape.</div>
+      <div style="font-size:24px;font-weight:700;color:#9FC0FF">TMF620 · PRODUCT CATALOG</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">3</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner Hub</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Applies the commercial layer: floor price, discount/revenue-share rules, category mapping and approval — governed by the operator, not the partner.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">COMMERCIAL GOVERNANCE</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">4</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Core catalog &amp; channels</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Published once into the core product catalog, then out simultaneously to Shopfront, Channel Portal and CRM B2B — same SKU, same price, everywhere.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">ONE PUBLISH, EVERY CHANNEL</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:26px 40px;margin-top:28px;display:flex;align-items:center;gap:22px">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.4;color:#fff"><b>Gap closed:</b> today's manual, hand-loaded catalog per client becomes one automated ingestion, one governance checkpoint, one publish — for every partner and every channel.</div>
+  </div>
+</section>
+
+<!-- 13C PROCESS DEEP DIVE: FULFILLMENT -->
+<section data-label="Process deep dive · Fulfillment" data-speaker-notes="Deep-dive 3 of 6. The order now originates in the telco's own channel (Shopfront/Channel Portal) instead of the partner's console. Core validates entitlement and holds one unified inventory record; the PIL executes the actual add/modify/delete against the partner; the partner's confirmation event is captured back automatically." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">PROCESS DEEP DIVE · 03 OF 06</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 36px;letter-spacing:-.015em">Fulfillment (add / modify / delete), with the new stack in place.</h2>
+  <div style="display:flex;align-items:stretch;gap:0;flex:1">
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">1</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Client / sales</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Subscribes, changes or cancels a service from Shopfront or Channel Portal — never the partner's own console.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">ONE ORDERING CHANNEL</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#0D1B3E;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#1A56DB;color:#fff;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">2</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Core / CRM B2B</div>
+      <div style="font-size:24px;line-height:1.4;color:#DCE2F2;flex:1">Validates entitlement and creates the order in one unified client inventory — telco and partner services side by side.</div>
+      <div style="font-size:24px;font-weight:700;color:#9FC0FF">TMF622 · PRODUCT ORDER</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">3</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Process Integration Layer</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Translates the order into whatever the partner's API or console expects, and executes the fulfillment action.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">ORCHESTRATED EXECUTION</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">4</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Activates, changes or cancels the service; the confirmation event flows back through the PIL into the client inventory automatically.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">CONFIRMATION CAPTURED, NOT CHASED</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:26px 40px;margin-top:28px;display:flex;align-items:center;gap:22px">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.4;color:#fff"><b>Gap closed:</b> today's partner-console self-service (or care impersonation) becomes one inventory, one order, orchestrated automatically to the partner.</div>
+  </div>
+</section>
+
+<!-- 13D PROCESS DEEP DIVE: INVOICING -->
+<section data-label="Process deep dive · Invoicing" data-speaker-notes="Deep-dive 4 of 6. The partner still sends usage/billing data in its native format — that never changes. The PIL now normalizes and rates it automatically via TMF678, and core billing injects it onto one consolidated client invoice, removing the manual file-handling step entirely." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">PROCESS DEEP DIVE · 04 OF 06</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 36px;letter-spacing:-.015em">Invoicing to the client, with the new stack in place.</h2>
+  <div style="display:flex;align-items:stretch;gap:0;flex:1">
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">1</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Sends usage and billing data via its native API or file feed — the partner side of the process doesn't change.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">NATIVE USAGE FEED</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#0D1B3E;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#1A56DB;color:#fff;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">2</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Process Integration Layer</div>
+      <div style="font-size:24px;line-height:1.4;color:#DCE2F2;flex:1">Ingests and normalizes usage into one internal format, applying the agreed discount and revenue split automatically.</div>
+      <div style="font-size:24px;font-weight:700;color:#9FC0FF">TMF678 · USAGE MGMT</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">3</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Core billing</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Rates the normalized charges and injects them directly onto the client's account — no manual file handling.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">AUTOMATED RATING</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">4</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Client</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Receives one consolidated bill covering telco and every partner service, line-itemized and explained.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">ONE BILL, EVERY PARTNER</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:26px 40px;margin-top:28px;display:flex;align-items:center;gap:22px">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.4;color:#fff"><b>Gap closed:</b> today's monthly file and manual charge injection becomes an automated, auditable rating step — invisible to the client, effortless for the operator.</div>
+  </div>
+</section>
+
+<!-- 13E PROCESS DEEP DIVE: CARE / POST-SALE -->
+<section data-label="Process deep dive · Care / post-sale" data-speaker-notes="Deep-dive 5 of 6. Customer 360 gives care one view of every active service, telco or partner. The PIL routes the case automatically to the right destination — the partner's support channel if it's their issue, internal teams if it's the telco's — instead of the agent manually triaging and impersonating the client." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">PROCESS DEEP DIVE · 05 OF 06</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 36px;letter-spacing:-.015em">Care &amp; post-sale support, with the new stack in place.</h2>
+  <div style="display:flex;align-items:stretch;gap:0;flex:1">
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">1</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Client</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Raises an issue through one channel — the telco's own care — regardless of which partner service it concerns.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">ONE SUPPORT ENTRY POINT</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#0D1B3E;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#1A56DB;color:#fff;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">2</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Customer 360</div>
+      <div style="font-size:24px;line-height:1.4;color:#DCE2F2;flex:1">Gives the agent one live view of every active service — telco and partner — with real-time status, no console-switching.</div>
+      <div style="font-size:24px;font-weight:700;color:#9FC0FF">TMF621 · TROUBLE TICKET</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">3</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Process Integration Layer</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Routes the case automatically: to the partner's support API/console if it's their issue, or internally if it's telco-side.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">AUTOMATED TRIAGE</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">4</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Resolves and reports back through the PIL; the agent monitors and closes the loop — no impersonation, no guesswork.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">CLOSED-LOOP RESOLUTION</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:26px 40px;margin-top:28px;display:flex;align-items:center;gap:22px">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.4;color:#fff"><b>Gap closed:</b> today's manual triage and console impersonation becomes one console, automated routing, and proactive visibility for the agent.</div>
+  </div>
+</section>
+
+<!-- 13F PROCESS DEEP DIVE: SETTLEMENT -->
+<section data-label="Process deep dive · Settlement" data-speaker-notes="Deep-dive 6 of 6, closing the loop. The PIL has already normalized every partner's usage and billing events at the invoicing stage; here that same data drives automatic revenue-share calculation, a shared auditable ledger via Partner Hub, and automated payout — leaving only disputes as a manual exception." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:70px 110px">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:12px">PROCESS DEEP DIVE · 06 OF 06</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 36px;letter-spacing:-.015em">Settlement, with the new stack in place.</h2>
+  <div style="display:flex;align-items:stretch;gap:0;flex:1">
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">1</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Process Integration Layer</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Aggregates the normalized usage and billing events already ingested per partner across the settlement period.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">AGGREGATED USAGE</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#0D1B3E;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="display:inline-flex;align-self:flex-start;background:#1A56DB;color:#fff;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">2</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Core billing</div>
+      <div style="font-size:24px;line-height:1.4;color:#DCE2F2;flex:1">Calculates the revenue share and payout per partner and per deal automatically, on the agreed terms.</div>
+      <div style="font-size:24px;font-weight:700;color:#9FC0FF">TMF678 · REVENUE SHARE</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">3</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner Hub</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Surfaces the calculation to the partner in a shared, auditable ledger — open for validation or dispute.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">SHARED AUDITABLE LEDGER</div>
+    </div>
+    <div style="flex:0 0 60px;display:flex;align-items:center;justify-content:center"><svg width="44" height="24" viewBox="0 0 44 24"><line x1="0" y1="12" x2="34" y2="12" stroke="#7E8CB0" stroke-width="3"></line><path d="M34 4l10 8-10 8" fill="none" stroke="#7E8CB0" stroke-width="3"></path></svg></div>
+    <div style="flex:1;background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:inline-flex;align-self:flex-start;background:#EAF0FE;color:#1A56DB;font-size:24px;font-weight:700;padding:4px 14px;border-radius:99px">4</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Payout</div>
+      <div style="font-size:24px;line-height:1.4;color:#5A6478;flex:1">Executed and reconciled automatically; disputes become the only manual exception, not the default process.</div>
+      <div style="font-size:24px;font-weight:700;color:#7E8CB0">AUTOMATED, AUDITABLE</div>
+    </div>
+  </div>
+  <div style="background:#0D1B3E;border-radius:16px;padding:26px 40px;margin-top:28px;display:flex;align-items:center;gap:22px">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#9FC0FF" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+    <div style="font-size:24px;line-height:1.4;color:#fff"><b>Gap closed:</b> today's file-based reconciliation becomes a shared ledger with automatic calculation — margin analysis and price changes are the only things still done by hand.</div>
+  </div>
+</section>
+
+<!-- 14 SHOPFRONT AS NEW CHANNEL -->
+<section data-label="Shopfront: a new internal channel" data-speaker-notes="Reframe Shopfront: not only a customer-facing storefront, but a new internal channel used by third-party sales teams and agencies to sell the operator's and partners' catalog on the operator's behalf, fully instrumented and governed by the operator." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="26848591">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:14px">A NEW CHANNEL, NOT JUST A STOREFRONT</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 44px;letter-spacing:-.015em">Shopfront becomes the channel your own agencies and third-party sales teams sell through.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;flex:1">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif">Today</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Agencies and indirect sales teams sell off-platform — spreadsheets, informal quotes, no shared source of truth.</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:20px;padding:36px;color:#fff;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif;color:#9FC0FF">With Shopfront</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">Third parties log into the same governed catalog and pricing as your direct teams — every quote and order flows through the PIL.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:700 28px 'Schibsted Grotesk',sans-serif">Why it matters</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Every deal — direct or via agency — becomes visible, controllable and settleable the same way.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 TARGET ARCHITECTURE -->
+<section data-label="Target architecture" data-speaker-notes="High-level target picture: partner connectors on the left, PIL in the middle abstracting them, core IT stack + DBP modules on the right, Shopfront shown explicitly as a channel with both direct customers and third-party sales/agencies feeding into it. This can adapt the architecture diagram already built in Presentacion DBP slide 19." style="background:#0A1633;color:#fff;display:flex;flex-direction:column;padding:70px 110px" data-om-slide-id="cef7c04d">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9FC0FF;margin-bottom:12px">TARGET ARCHITECTURE</div>
+  <h2 style="font:800 46px/1.1 'Schibsted Grotesk',sans-serif;margin:0 0 30px;letter-spacing:-.015em">One layer, every partner, every channel.</h2>
+  <div class="ph" style="flex:1;border-radius:20px;border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center">
+    <div style="font-size:24px;color:#AAB6D4;text-align:center;max-width:1200px;line-height:1.6">Placeholder — adapt the existing PIL/module architecture diagram: partner connectors (Microsoft, Google, Palo Alto) → PIL → Partner Hub / Customer 360 / Offer Studio → channels (Shopfront for direct + agency/3rd-party sales, Channel Portal for care).</div>
+  </div>
+</section>
+
+<!-- 16 ACT IV DIVIDER -->
+<section data-label="Act IV" data-speaker-notes="Section divider." style="background:#0A1633;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:100px 120px;position:relative;overflow:hidden" data-om-slide-id="f8205521">
+  <div style="position:absolute;right:-160px;bottom:-220px;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(46,108,255,.18),transparent 65%)"></div>
+  <div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#9FC0FF;letter-spacing:.1em;margin-bottom:20px">ACT IV</div>
+  <h2 style="font:800 76px/1.1 'Schibsted Grotesk',sans-serif;margin:0;max-width:1400px;letter-spacing:-.015em">Getting there</h2>
+</section>
+
+<!-- 17 PHASED PATH -->
+<section data-label="Phased path" data-speaker-notes="Propose a phased capability rollout: Phase 0 stand up the PIL against one partner to prove control without touching the core; Phase 1 add Partner Hub self-serve onboarding; Phase 2 open Shopfront as the agency/3rd-party channel; Phase 3 full Customer 360 + automated settlement across all partners." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="5116c8cf">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:14px">HOW WE GET THERE</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 44px;letter-spacing:-.015em">Prove control with one partner before scaling to all of them.</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;flex:1">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:30px 26px;display:flex;flex-direction:column;gap:12px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#7E8CB0">PHASE 0</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Stand up the PIL</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">One partner connector (e.g. Microsoft), proving orchestration end-to-end without touching the core stack.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:30px 26px;display:flex;flex-direction:column;gap:12px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#7E8CB0">PHASE 1</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Partner Hub</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Self-serve onboarding and catalog sync — new partners plug in without an IT project.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:30px 26px;display:flex;flex-direction:column;gap:12px">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#7E8CB0">PHASE 2</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Open Shopfront</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Launch as the governed channel for agencies and third-party sales teams.</div>
+    </div>
+    <div style="background:#0D1B3E;border-radius:18px;padding:30px 26px;display:flex;flex-direction:column;gap:12px;color:#fff">
+      <div style="font:700 24px 'Schibsted Grotesk',sans-serif;color:#9FC0FF">PHASE 3</div>
+      <div style="font:700 26px 'Schibsted Grotesk',sans-serif">Full scale</div>
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2">Customer 360 and automated settlement across every partner and channel.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 18 WHAT CHANGES INTERNALLY -->
+<section data-label="What changes internally" data-speaker-notes="Address organizational readiness: this is as much an operating-model change as a technology one. New partner-ops ownership, governance of the PIL's rules/policies, and clearer accountability replacing today's ad hoc bilateral negotiation." style="background:#F6F7FA;color:#0D1B3E;display:flex;flex-direction:column;padding:80px 120px" data-om-slide-id="82b6f098">
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#1A56DB;margin-bottom:14px">BEYOND TECHNOLOGY</div>
+  <h2 style="font:800 50px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 44px;letter-spacing:-.015em">This is an operating-model change, not just a system.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;flex:1">
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:34px">
+      <div style="font:700 27px 'Schibsted Grotesk',sans-serif;margin-bottom:10px">A partner-ops owner</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">One team owns the PIL's rules and every partner connector — replacing ad hoc bilateral deals.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:34px">
+      <div style="font:700 27px 'Schibsted Grotesk',sans-serif;margin-bottom:10px">Sales &amp; care enablement</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">Direct and agency teams work from the same live inventory and entitlement view.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E3E7EF;border-radius:18px;padding:34px">
+      <div style="font:700 27px 'Schibsted Grotesk',sans-serif;margin-bottom:10px">Governance, not tickets</div>
+      <div style="font-size:24px;line-height:1.5;color:#5A6478">New partner terms are a workflow approval, not an IT backlog item.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 19 CLOSING / CALL TO ACTION -->
+<section data-label="What we need from you" data-speaker-notes="Close with a concrete ask: pick one partner and one flow, commit to a defined timeframe to prove the PIL model end-to-end before scaling. This is the decision point the whole narrative builds toward." style="background:linear-gradient(180deg,#0A1633 0%,#0D1B3E 65%,#12244E 100%);color:#fff;display:flex;flex-direction:column;padding:100px 120px;position:relative;overflow:hidden" data-om-slide-id="833262e6">
+  <div style="position:absolute;left:-200px;bottom:-260px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(46,108,255,.22),transparent 65%)"></div>
+  <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9FC0FF;margin-bottom:18px;position:relative">THE DECISION</div>
+  <h2 style="font:800 62px/1.15 'Schibsted Grotesk',sans-serif;margin:0 0 40px;letter-spacing:-.015em;max-width:1400px;position:relative">Pick one partner. Prove the model. Then scale it to every partner and channel.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:30px">
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2"><b>1. Choose the pilot partner</b><br>Likely Microsoft, given existing volume and process maturity.</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:30px">
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2"><b>2. Scope the first flow</b><br>End-to-end for one product line: onboarding through settlement.</div>
+    </div>
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:30px">
+      <div style="font-size:24px;line-height:1.5;color:#DCE2F2"><b>3. Set the proof window</b><br>A defined timeframe to validate control before wider rollout.</div>
+    </div>
+  </div>
+</section>
+
+</x-import>
+
+</x-dc>
+</body>
+</html>

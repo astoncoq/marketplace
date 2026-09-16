@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#eceef2;font-family:'Instrument Sans',system-ui,sans-serif}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+.dv-row{font:700 11px/1 system-ui,sans-serif;color:rgba(0,0,0,.45);letter-spacing:.12em;text-transform:uppercase;margin:34px 0 14px}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Offer Design studio — operator product manager composes bundles from own + onboarded partner products · Connected Operations bundle being built</span></div>
+
+<div style="max-width:960px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:22px 26px;margin:0 0 26px;font-size:12.5px;line-height:1.55;color:#374151">
+  <div style="font:700 13px 'Schibsted Grotesk',sans-serif;color:#0D1B3E;margin-bottom:8px">Assumptions &amp; design reasoning</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 28px">
+    <div>• <b>Persona:</b> Sofia, product manager at Northlink (the operator). Internal admin tool — same tokens, denser layout, dark sidebar labeled Catalog Studio.</div>
+    <div>• <b>Two composer options:</b> guided wizard (<a class="dv-oid" href="#1b">1b</a>) vs canvas builder (<a class="dv-oid" href="#1c">1c</a>) — both feed the same pricing step (<a class="dv-oid" href="#1d">1d</a>).</div>
+    <div>• <b>Bundles mix origins:</b> operator products + partner products already onboarded via Partner Hub (Trackwise). Floor prices &amp; partner terms come from each partner's agreement — the composer enforces them.</div>
+    <div>• <b>Revenue split is first-class:</b> the pricing step shows exactly what lands on each partner's settlement statement — same numbers Trackwise sees in the Partner Hub.</div>
+    <div>• <b>Lifecycle per spec:</b> Draft → In review → Approved → Published (TMF620); versioning with effective dates (<a class="dv-oid" href="#1e">1e</a>).</div>
+    <div>• <b>Offer Design Guru:</b> light inline hints only (per your choice) — attach-rate nudges, price-floor warnings, no takeover panels.</div>
+  </div>
+</div>
+
+<div class="dv-row">Catalog manager</div>
+<div class="dv-opts">
+
+<!-- ============ 1a OFFER LIST ============ -->
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Offers &amp; bundles — catalog manager list with lifecycle &amp; origin mix</div>
+<div class="dv-card" style="width:1280px">
+<div style="display:grid;grid-template-columns:222px 1fr;min-height:640px">
+  <!-- sidebar -->
+  <div style="background:#0A1633;padding:22px 16px;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 22px"><div style="width:26px;height:26px;border-radius:6px;background:#fff;color:#0D1B3E;display:grid;place-items:center;font:800 13px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 14px 'Schibsted Grotesk',sans-serif;color:#fff">Catalog Studio</div></div>
+    <div style="display:flex;flex-direction:column;gap:2px;font-size:13px;font-weight:500;color:#AAB6D4">
+      <div style="display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.1);color:#fff;font-weight:600;border-radius:8px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 16V8l-9-5-9 5v8l9 5z"></path><path d="M3.3 7.5L12 12l8.7-4.5M12 22V12"></path></svg>Offers &amp; bundles</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>Product specs</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>Pricing rules</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M9 11l3 3 8-8"></path><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"></path></svg>Approvals <span style="margin-left:auto;font-size:10.5px;background:#E8A23F;color:#141B2C;border-radius:99px;padding:2px 7px;font-weight:700">2</span></div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M3 20h18M6 16v-5M11 16V7M16 16v-8M21 16V4"></path></svg>Offer analytics</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"></path><circle cx="9" cy="7" r="4"></circle></svg>Partners</div>
+    </div>
+    <div style="margin-top:auto;border-top:1px solid rgba(255,255,255,.12);padding-top:14px;display:flex;align-items:center;gap:10px;padding-left:8px"><div style="width:30px;height:30px;border-radius:99px;background:#EAF0FE;color:#1A56DB;display:grid;place-items:center;font:700 11px sans-serif">SR</div><div><div style="font-size:12.5px;font-weight:600;color:#fff">Sofia Renner</div><div style="font-size:10.5px;color:#7E8CB0">Product manager</div></div></div>
+  </div>
+  <!-- main -->
+  <div style="background:#F6F7FA">
+    <div style="display:flex;align-items:center;gap:16px;padding:0 32px;height:60px;border-bottom:1px solid #E3E7EF;background:#fff">
+      <div style="font:700 16px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Offers &amp; bundles</div>
+      <div style="margin-left:auto;display:flex;gap:12px"><div style="display:flex;align-items:center;gap:8px;background:#F3F5F9;border:1px solid #E3E7EF;border-radius:8px;padding:7px 12px;width:220px;color:#8A92A6;font-size:12.5px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8A92A6" stroke-width="2.4"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>Search offers…</div><div style="background:#1A56DB;color:#fff;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:8px">+ New bundle</div></div>
+    </div>
+    <div style="padding:24px 32px">
+      <div style="display:flex;gap:8px;margin-bottom:18px;font-size:12px;font-weight:600">
+        <span style="background:#0D1B3E;color:#fff;border-radius:99px;padding:6px 13px">All (23)</span>
+        <span style="border:1px solid #E3E7EF;background:#fff;color:#3A4358;border-radius:99px;padding:6px 13px">Bundles (8)</span>
+        <span style="border:1px solid #E3E7EF;background:#fff;color:#3A4358;border-radius:99px;padding:6px 13px">Simple offers (15)</span>
+        <span style="border:1px solid #E3E7EF;background:#fff;color:#3A4358;border-radius:99px;padding:6px 13px">With partner components (9)</span>
+        <span style="border:1px solid #E3E7EF;background:#fff;color:#3A4358;border-radius:99px;padding:6px 13px">Drafts (4)</span>
+      </div>
+      <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:2.4fr 1.4fr 1fr 1fr 1.1fr .7fr;padding:11px 22px;background:#FAFBFD;border-bottom:1px solid #EEF0F5;font-size:10.5px;font-weight:700;letter-spacing:.07em;color:#8A92A6"><span>OFFER</span><span>COMPONENTS</span><span>PRICE</span><span>MRR</span><span>LIFECYCLE</span><span></span></div>
+        <div style="display:grid;grid-template-columns:2.4fr 1.4fr 1fr 1fr 1.1fr .7fr;padding:14px 22px;border-bottom:1px solid #EEF0F5;align-items:center;background:#F7FAFF;border-left:3px solid #1A56DB">
+          <div><div style="display:flex;align-items:center;gap:8px"><b style="font-size:13.5px;color:#0D1B3E">Connected Operations</b><span style="font-size:9.5px;font-weight:700;color:#B45309;background:#FEF3E2;padding:2px 7px;border-radius:5px">BUNDLE</span></div><div style="font-size:11.5px;color:#8A92A6">v1.0 draft · edited 10 min ago by you</div></div>
+          <div style="display:flex;gap:5px;align-items:center"><span style="width:9px;height:9px;border-radius:3px;background:#1A56DB" title="operator"></span><span style="width:9px;height:9px;border-radius:3px;background:#6D28D9"></span><span style="font-size:11.5px;color:#5A6478">1 own + 1 partner</span></div>
+          <div style="font-size:13px;color:#3A4358">from €3,572/mo</div><div style="font-size:13px;color:#8A92A6">—</div>
+          <div><span style="font-size:10.5px;font-weight:700;color:#5A6478;background:#EEF0F5;padding:3px 9px;border-radius:99px">DRAFT</span></div>
+          <div style="font-size:12px;font-weight:600;color:#1A56DB;text-align:right">Edit →</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2.4fr 1.4fr 1fr 1fr 1.1fr .7fr;padding:14px 22px;border-bottom:1px solid #EEF0F5;align-items:center">
+          <div><div style="display:flex;align-items:center;gap:8px"><b style="font-size:13.5px;color:#0D1B3E">SME Kickstart</b><span style="font-size:9.5px;font-weight:700;color:#B45309;background:#FEF3E2;padding:2px 7px;border-radius:5px">BUNDLE</span></div><div style="font-size:11.5px;color:#8A92A6">v2.3 · 3 providers</div></div>
+          <div style="display:flex;gap:5px;align-items:center"><span style="width:9px;height:9px;border-radius:3px;background:#1A56DB"></span><span style="width:9px;height:9px;border-radius:3px;background:#6D28D9"></span><span style="width:9px;height:9px;border-radius:3px;background:#6D28D9"></span><span style="font-size:11.5px;color:#5A6478">1 own + 2 partner</span></div>
+          <div style="font-size:13px;color:#3A4358">€189/user/mo</div><div style="font-size:13px;color:#3A4358">€214k</div>
+          <div><span style="font-size:10.5px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:3px 9px;border-radius:99px">PUBLISHED</span></div>
+          <div style="font-size:12px;font-weight:600;color:#1A56DB;text-align:right">Open →</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2.4fr 1.4fr 1fr 1fr 1.1fr .7fr;padding:14px 22px;border-bottom:1px solid #EEF0F5;align-items:center">
+          <div><div style="display:flex;align-items:center;gap:8px"><b style="font-size:13.5px;color:#0D1B3E">Cold Chain Q3</b><span style="font-size:9.5px;font-weight:700;color:#B45309;background:#FEF3E2;padding:2px 7px;border-radius:5px">BUNDLE</span></div><div style="font-size:11.5px;color:#8A92A6">v1.0 · submitted by you, 28 Jun</div></div>
+          <div style="display:flex;gap:5px;align-items:center"><span style="width:9px;height:9px;border-radius:3px;background:#1A56DB"></span><span style="width:9px;height:9px;border-radius:3px;background:#6D28D9"></span><span style="font-size:11.5px;color:#5A6478">1 own + 1 partner</span></div>
+          <div style="font-size:13px;color:#3A4358">€8.90/unit/mo</div><div style="font-size:13px;color:#8A92A6">—</div>
+          <div><span style="font-size:10.5px;font-weight:700;color:#976A0F;background:#FDF2D9;padding:3px 9px;border-radius:99px">IN REVIEW</span></div>
+          <div style="font-size:12px;font-weight:600;color:#1A56DB;text-align:right">View →</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2.4fr 1.4fr 1fr 1fr 1.1fr .7fr;padding:14px 22px;border-bottom:1px solid #EEF0F5;align-items:center">
+          <div><div style="display:flex;align-items:center;gap:8px"><b style="font-size:13.5px;color:#0D1B3E">Private 5G Campus</b><span style="font-size:9.5px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:2px 7px;border-radius:5px">SIMPLE</span></div><div style="font-size:11.5px;color:#8A92A6">v4.1 · own product</div></div>
+          <div style="display:flex;gap:5px;align-items:center"><span style="width:9px;height:9px;border-radius:3px;background:#1A56DB"></span><span style="font-size:11.5px;color:#5A6478">operator</span></div>
+          <div style="font-size:13px;color:#3A4358">from €2,400/mo</div><div style="font-size:13px;color:#3A4358">€96k</div>
+          <div><span style="font-size:10.5px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:3px 9px;border-radius:99px">PUBLISHED</span></div>
+          <div style="font-size:12px;font-weight:600;color:#1A56DB;text-align:right">Open →</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2.4fr 1.4fr 1fr 1fr 1.1fr .7fr;padding:14px 22px;align-items:center">
+          <div><div style="display:flex;align-items:center;gap:8px"><b style="font-size:13.5px;color:#0D1B3E">Fleet IoT Connect</b><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:5px">PARTNER · TRACKWISE</span></div><div style="font-size:11.5px;color:#8A92A6">v3.2 · resale terms AGR-0042</div></div>
+          <div style="display:flex;gap:5px;align-items:center"><span style="width:9px;height:9px;border-radius:3px;background:#6D28D9"></span><span style="font-size:11.5px;color:#5A6478">partner</span></div>
+          <div style="font-size:13px;color:#3A4358">€3.20/SIM/mo</div><div style="font-size:13px;color:#3A4358">€35k</div>
+          <div><span style="font-size:10.5px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:3px 9px;border-radius:99px">PUBLISHED</span></div>
+          <div style="font-size:12px;font-weight:600;color:#1A56DB;text-align:right">Open →</div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(90deg,#EEF3FF,#F6F1FF);border:1px solid #D8E2FA;border-radius:12px;padding:13px 18px;display:flex;align-items:center;gap:12px;margin-top:16px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#1A56DB" style="flex:none"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg>
+        <div style="font-size:12.5px;color:#3A4358;line-height:1.5"><b style="color:#0D1B3E">Offer Design Guru:</b> 61% of June's Private 5G buyers also bought Fleet IoT within 30 days — your <b>Connected Operations</b> draft targets exactly this pair. Finishing it before the summer quarter could capture ~€38k MRR.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="dv-row">Bundle composer — two UX options</div>
+<div class="dv-opts">
+
+<!-- ============ 1b WIZARD COMPOSER ============ -->
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Option A — guided wizard: pick components step</div>
+<div class="dv-card" style="width:1280px">
+  <div style="display:flex;align-items:center;gap:20px;padding:0 40px;height:60px;border-bottom:1px solid #E3E7EF;background:#fff">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:26px;height:26px;border-radius:6px;background:#0D1B3E;color:#fff;display:grid;place-items:center;font:800 13px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 15px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">New bundle: <span style="color:#1A56DB">Connected Operations</span></div><span style="font-size:10.5px;font-weight:700;color:#5A6478;background:#EEF0F5;padding:3px 9px;border-radius:99px">DRAFT v1.0</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:16px;font-size:12.5px;font-weight:600"><span style="color:#8A92A6">Autosaved 14:22</span><span style="color:#1A56DB">Save &amp; exit</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:230px 1fr;background:#F6F7FA;min-height:620px">
+    <!-- steps -->
+    <div style="background:#fff;border-right:1px solid #E3E7EF;padding:26px 22px;display:flex;flex-direction:column;gap:2px">
+      <div style="display:flex;gap:12px;align-items:center;padding:10px 0"><div style="width:24px;height:24px;border-radius:99px;background:#1A56DB;color:#fff;display:grid;place-items:center;font:700 11.5px sans-serif;flex:none">1</div><div><div style="font-size:13px;font-weight:700;color:#1A56DB">Components</div><div style="font-size:11px;color:#8A92A6">2 selected</div></div></div>
+      <div style="width:2px;height:14px;background:#DFE3EC;margin-left:11px"></div>
+      <div style="display:flex;gap:12px;align-items:center;padding:10px 0;opacity:.55"><div style="width:24px;height:24px;border-radius:99px;border:1.5px solid #C9CFDC;color:#8A92A6;display:grid;place-items:center;font:700 11.5px sans-serif;flex:none">2</div><div style="font-size:13px;font-weight:600;color:#3A4358">Structure &amp; rules</div></div>
+      <div style="width:2px;height:14px;background:#DFE3EC;margin-left:11px"></div>
+      <div style="display:flex;gap:12px;align-items:center;padding:10px 0;opacity:.55"><div style="width:24px;height:24px;border-radius:99px;border:1.5px solid #C9CFDC;color:#8A92A6;display:grid;place-items:center;font:700 11.5px sans-serif;flex:none">3</div><div style="font-size:13px;font-weight:600;color:#3A4358">Pricing &amp; split</div></div>
+      <div style="width:2px;height:14px;background:#DFE3EC;margin-left:11px"></div>
+      <div style="display:flex;gap:12px;align-items:center;padding:10px 0;opacity:.55"><div style="width:24px;height:24px;border-radius:99px;border:1.5px solid #C9CFDC;color:#8A92A6;display:grid;place-items:center;font:700 11.5px sans-serif;flex:none">4</div><div style="font-size:13px;font-weight:600;color:#3A4358">Terms &amp; channels</div></div>
+      <div style="width:2px;height:14px;background:#DFE3EC;margin-left:11px"></div>
+      <div style="display:flex;gap:12px;align-items:center;padding:10px 0;opacity:.55"><div style="width:24px;height:24px;border-radius:99px;border:1.5px solid #C9CFDC;color:#8A92A6;display:grid;place-items:center;font:700 11.5px sans-serif;flex:none">5</div><div style="font-size:13px;font-weight:600;color:#3A4358">Review &amp; submit</div></div>
+    </div>
+    <!-- main -->
+    <div style="padding:32px 36px">
+      <div style="font:700 21px 'Schibsted Grotesk',sans-serif;color:#0D1B3E;margin-bottom:4px">What goes in this bundle?</div>
+      <div style="font-size:13.5px;color:#5A6478;margin-bottom:24px">Pick from the published catalog — your own products and onboarded partner products. Resale terms apply automatically.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start">
+        <!-- catalog picker -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px">
+          <div style="display:flex;align-items:center;gap:8px;background:#F3F5F9;border:1px solid #E3E7EF;border-radius:8px;padding:8px 12px;color:#8A92A6;font-size:12.5px;margin-bottom:12px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8A92A6" stroke-width="2.4"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>Search published products…</div>
+          <div style="display:flex;gap:6px;margin-bottom:12px;font-size:11.5px;font-weight:600"><span style="background:#0D1B3E;color:#fff;border-radius:99px;padding:5px 11px">All</span><span style="border:1px solid #E3E7EF;color:#3A4358;border-radius:99px;padding:5px 11px">Northlink (21)</span><span style="border:1px solid #E3E7EF;color:#3A4358;border-radius:99px;padding:5px 11px">Partners (19)</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:11px;opacity:.45"><span style="font-size:9.5px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:2px 7px;border-radius:4px">OPERATOR</span><b style="font-size:12.5px;color:#0D1B3E;flex:1">Private 5G Campus</b><span style="font-size:11px;font-weight:700;color:#0FA968">Added ✓</span></div>
+            <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:11px;opacity:.45"><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:4px">TRACKWISE</span><b style="font-size:12.5px;color:#0D1B3E;flex:1">Fleet IoT Connect</b><span style="font-size:11px;font-weight:700;color:#0FA968">Added ✓</span></div>
+            <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:11px"><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:4px">EDGECORE</span><b style="font-size:12.5px;color:#0D1B3E;flex:1">Edge Compute for Retail</b><span style="font-size:11.5px;font-weight:700;color:#1A56DB">+ Add</span></div>
+            <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:11px"><span style="font-size:9.5px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:2px 7px;border-radius:4px">OPERATOR</span><b style="font-size:12.5px;color:#0D1B3E;flex:1">SD-WAN Branch Connect</b><span style="font-size:11.5px;font-weight:700;color:#1A56DB">+ Add</span></div>
+            <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:11px"><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:4px">TRACKWISE</span><b style="font-size:12.5px;color:#0D1B3E;flex:1">Driver Comms Add-on</b><span style="font-size:11.5px;font-weight:700;color:#1A56DB">+ Add</span></div>
+          </div>
+        </div>
+        <!-- selected -->
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px">
+            <div style="font-size:12px;font-weight:700;color:#0D1B3E;margin-bottom:12px">IN THE BUNDLE <span style="font-weight:500;color:#8A92A6">· 2 components</span></div>
+            <div style="border:1px solid #EEF0F5;border-radius:9px;padding:12px 14px;margin-bottom:8px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:9.5px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:2px 7px;border-radius:4px">OPERATOR</span><b style="font-size:13px;color:#0D1B3E;flex:1">Private 5G Campus</b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B4BAC8" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg></div>
+              <div style="display:flex;gap:8px;font-size:11px;font-weight:600"><span style="background:#0D1B3E;color:#fff;border-radius:99px;padding:4px 10px">Mandatory</span><span style="border:1px solid #E3E7EF;color:#8A92A6;border-radius:99px;padding:4px 10px">Optional</span><span style="margin-left:auto;color:#5A6478;font-weight:500;padding:4px 0">list from €2,400/mo</span></div>
+            </div>
+            <div style="border:1px solid #EEF0F5;border-radius:9px;padding:12px 14px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:4px">TRACKWISE</span><b style="font-size:13px;color:#0D1B3E;flex:1">Fleet IoT Connect</b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B4BAC8" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg></div>
+              <div style="display:flex;gap:8px;font-size:11px;font-weight:600"><span style="background:#0D1B3E;color:#fff;border-radius:99px;padding:4px 10px">Mandatory</span><span style="border:1px solid #E3E7EF;color:#8A92A6;border-radius:99px;padding:4px 10px">Optional</span><span style="margin-left:auto;color:#5A6478;font-weight:500;padding:4px 0">resale floor €2.72/SIM</span></div>
+            </div>
+          </div>
+          <div style="background:#F3F6FE;border:1px solid #D8E2FA;border-radius:11px;padding:12px 15px;display:flex;gap:10px;font-size:12px;line-height:1.5;color:#3A4358"><svg width="12" height="12" viewBox="0 0 24 24" fill="#1A56DB" style="flex:none;margin-top:2px"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg><span><b>Guru:</b> buyers of this pair often add <b>Edge Compute for Retail</b> (34% attach) — consider it as an optional component.</span></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px">
+        <div style="font-size:13.5px;font-weight:600;color:#5A6478">Cancel</div>
+        <div style="background:#1A56DB;color:#fff;font-size:13.5px;font-weight:600;padding:12px 26px;border-radius:9px">Continue to structure →</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ============ 1c CANVAS COMPOSER ============ -->
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Option B — canvas builder: palette → bundle tree → live commercial rail</div>
+<div class="dv-card" style="width:1280px">
+  <div style="display:flex;align-items:center;gap:20px;padding:0 40px;height:60px;border-bottom:1px solid #E3E7EF;background:#fff">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:26px;height:26px;border-radius:6px;background:#0D1B3E;color:#fff;display:grid;place-items:center;font:800 13px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 15px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Bundle: <span style="color:#1A56DB">Connected Operations</span></div><span style="font-size:10.5px;font-weight:700;color:#5A6478;background:#EEF0F5;padding:3px 9px;border-radius:99px">DRAFT v1.0</span></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:12px"><span style="font-size:12.5px;color:#8A92A6">Autosaved 14:22</span><div style="border:1px solid #E3E7EF;background:#fff;color:#0D1B3E;font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:8px">Preview in shopfront</div><div style="background:#1A56DB;color:#fff;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:8px">Continue to pricing →</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:300px 1fr 320px;background:#F6F7FA;min-height:640px">
+    <!-- palette -->
+    <div style="background:#fff;border-right:1px solid #E3E7EF;padding:20px;display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6">CATALOG PALETTE</div>
+      <div style="display:flex;align-items:center;gap:8px;background:#F3F5F9;border:1px solid #E3E7EF;border-radius:8px;padding:8px 12px;color:#8A92A6;font-size:12.5px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8A92A6" stroke-width="2.4"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>Search…</div>
+      <div style="display:flex;gap:6px;font-size:11.5px;font-weight:600"><span style="background:#0D1B3E;color:#fff;border-radius:99px;padding:5px 11px">All</span><span style="border:1px solid #E3E7EF;color:#3A4358;border-radius:99px;padding:5px 11px">Own</span><span style="border:1px solid #E3E7EF;color:#3A4358;border-radius:99px;padding:5px 11px">Partner</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:9px;cursor:grab"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9CFDC" stroke-width="2.4"><circle cx="8" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="18" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="18" r="1.4" fill="#C9CFDC"></circle></svg><div style="flex:1"><b style="font-size:12.5px;color:#0D1B3E">SD-WAN Branch Connect</b><div style="font-size:10.5px;color:#8A92A6">Northlink · €120/site</div></div><span style="width:9px;height:9px;border-radius:3px;background:#1A56DB"></span></div>
+        <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:9px;cursor:grab"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9CFDC" stroke-width="2.4"><circle cx="8" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="18" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="18" r="1.4" fill="#C9CFDC"></circle></svg><div style="flex:1"><b style="font-size:12.5px;color:#0D1B3E">Edge Compute for Retail</b><div style="font-size:10.5px;color:#8A92A6">edgeCore · €640/node</div></div><span style="width:9px;height:9px;border-radius:3px;background:#6D28D9"></span></div>
+        <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:9px;cursor:grab"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9CFDC" stroke-width="2.4"><circle cx="8" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="18" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="18" r="1.4" fill="#C9CFDC"></circle></svg><div style="flex:1"><b style="font-size:12.5px;color:#0D1B3E">Driver Comms Add-on</b><div style="font-size:10.5px;color:#8A92A6">Trackwise · €1.10/user</div></div><span style="width:9px;height:9px;border-radius:3px;background:#6D28D9"></span></div>
+        <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:9px;cursor:grab"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9CFDC" stroke-width="2.4"><circle cx="8" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="18" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="18" r="1.4" fill="#C9CFDC"></circle></svg><div style="flex:1"><b style="font-size:12.5px;color:#0D1B3E">Business Mobile 5G</b><div style="font-size:10.5px;color:#8A92A6">Northlink · €22/sub</div></div><span style="width:9px;height:9px;border-radius:3px;background:#1A56DB"></span></div>
+        <div style="border:1px solid #EEF0F5;border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:9px;cursor:grab"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9CFDC" stroke-width="2.4"><circle cx="8" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="6" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="12" r="1.4" fill="#C9CFDC"></circle><circle cx="8" cy="18" r="1.4" fill="#C9CFDC"></circle><circle cx="16" cy="18" r="1.4" fill="#C9CFDC"></circle></svg><div style="flex:1"><b style="font-size:12.5px;color:#0D1B3E">Cold Chain Monitor</b><div style="font-size:10.5px;color:#8A92A6">Trackwise · €5.90/unit</div></div><span style="width:9px;height:9px;border-radius:3px;background:#6D28D9"></span></div>
+      </div>
+      <div style="margin-top:auto;font-size:11px;color:#8A92A6;line-height:1.6;border-top:1px solid #EEF0F5;padding-top:12px">Drag a product onto the canvas. Partner floor prices &amp; terms apply automatically from their agreements.</div>
+    </div>
+    <!-- canvas -->
+    <div style="padding:28px 30px;position:relative">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:16px">BUNDLE STRUCTURE</div>
+      <!-- root node -->
+      <div style="background:#0D1B3E;border-radius:12px;padding:16px 20px;color:#fff;display:flex;align-items:center;gap:12px;max-width:420px">
+        <div style="width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.12);display:grid;place-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9FC0FF" stroke-width="2"><path d="M21 16V8l-9-5-9 5v8l9 5z"></path><path d="M3.3 7.5L12 12l8.7-4.5M12 22V12"></path></svg></div>
+        <div><div style="font:700 15px 'Schibsted Grotesk',sans-serif">Connected Operations</div><div style="font-size:11px;color:#AAB6D4">Commercial bundle · 36-month term</div></div>
+      </div>
+      <div style="width:2px;height:22px;background:#C9CFDC;margin-left:40px"></div>
+      <!-- mandatory group -->
+      <div style="border:1.5px solid #C9CFDC;border-radius:12px;padding:16px 18px;max-width:560px;background:#fff">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="font-size:10px;font-weight:700;letter-spacing:.07em;color:#fff;background:#0D1B3E;padding:3px 9px;border-radius:99px">MANDATORY</span><span style="font-size:11px;color:#8A92A6">min 1 of each</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="border:1px solid #E3E7EF;border-radius:10px;padding:13px 15px;display:flex;align-items:center;gap:11px;box-shadow:0 1px 3px rgba(13,27,62,.05)"><span style="font-size:9.5px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:2px 7px;border-radius:4px">OPERATOR</span><div style="flex:1"><b style="font-size:13px;color:#0D1B3E">Private 5G Campus</b><div style="font-size:11px;color:#8A92A6">qty: per site · config passed through to buyer</div></div><span style="font-size:12px;color:#5A6478;font-weight:600">€2,400+</span></div>
+          <div style="border:1px solid #E3E7EF;border-radius:10px;padding:13px 15px;display:flex;align-items:center;gap:11px;box-shadow:0 1px 3px rgba(13,27,62,.05)"><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:4px">TRACKWISE</span><div style="flex:1"><b style="font-size:13px;color:#0D1B3E">Fleet IoT Connect</b><div style="font-size:11px;color:#8A92A6">qty: 10–500 SIMs · fulfilled by Trackwise</div></div><span style="font-size:12px;color:#5A6478;font-weight:600">€3.20/SIM</span></div>
+        </div>
+      </div>
+      <div style="width:2px;height:22px;background:#C9CFDC;margin-left:40px"></div>
+      <!-- optional group -->
+      <div style="border:1.5px dashed #C9CFDC;border-radius:12px;padding:16px 18px;max-width:560px;background:#FBFCFE">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="font-size:10px;font-weight:700;letter-spacing:.07em;color:#3A4358;background:#EEF0F5;padding:3px 9px;border-radius:99px">OPTIONAL ADD-ONS</span><span style="font-size:11px;color:#8A92A6">0–2</span></div>
+        <div style="border:1px solid #E3E7EF;border-radius:10px;padding:13px 15px;display:flex;align-items:center;gap:11px;background:#fff"><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:4px">EDGECORE</span><div style="flex:1"><b style="font-size:13px;color:#0D1B3E">Edge Compute for Retail</b><div style="font-size:11px;color:#8A92A6">suggested by Guru · 34% attach on this pair</div></div><span style="font-size:12px;color:#5A6478;font-weight:600">€640/node</span></div>
+        <div style="border:1.5px dashed #D5DAE5;border-radius:10px;padding:12px;text-align:center;font-size:11.5px;font-weight:600;color:#8A92A6;margin-top:10px">Drop a product here</div>
+      </div>
+    </div>
+    <!-- commercial rail -->
+    <div style="background:#fff;border-left:1px solid #E3E7EF;padding:22px;display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6">LIVE COMMERCIALS <span style="font-weight:500">· typical config</span></div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:12.5px;color:#3A4358">
+        <div style="display:flex;justify-content:space-between"><span>Private 5G (1 site, High)</span><b>€3,220</b></div>
+        <div style="display:flex;justify-content:space-between"><span>Fleet IoT (40 SIMs + dash)</span><b>€128</b></div>
+        <div style="display:flex;justify-content:space-between;color:#8A92A6"><span>Component sum</span><span>€3,714/mo</span></div>
+        <div style="display:flex;justify-content:space-between;color:#0FA968"><span>Bundle discount (target)</span><b>−€142</b></div>
+        <div style="display:flex;justify-content:space-between;border-top:1px solid #EEF0F5;padding-top:9px;font-size:14px"><b style="color:#0D1B3E">Bundle price</b><b style="color:#1A56DB;font-size:16px">€3,572/mo</b></div>
+      </div>
+      <div style="border-top:1px solid #EEF0F5;padding-top:14px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:9px">MARGIN CHECK</div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#3A4358">
+          <div style="display:flex;justify-content:space-between"><span>Northlink net margin</span><b style="color:#0FA968">31.4%</b></div>
+          <div style="display:flex;justify-content:space-between"><span>vs. Trackwise floor</span><b style="color:#0FA968">+18% headroom</b></div>
+        </div>
+      </div>
+      <div style="background:#F3F6FE;border:1px solid #D8E2FA;border-radius:11px;padding:12px 14px;font-size:12px;line-height:1.5;color:#3A4358"><b>Guru:</b> at −€142 the bundle undercuts buying separately by 3.8% — enough to nudge, low risk of cannibalizing Private 5G solo sales.</div>
+      <div style="margin-top:auto;border-top:1px solid #EEF0F5;padding-top:12px;font-size:11px;color:#8A92A6;line-height:1.6">Detailed pricing &amp; revenue split on the next step — <a class="dv-oid" href="#1d">1d</a></div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="dv-row">Price, publish, measure</div>
+<div class="dv-opts">
+
+<!-- ============ 1d PRICING & SPLIT ============ -->
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Pricing &amp; revenue split — bundle discount + what each partner settles</div>
+<div class="dv-card" style="width:1280px">
+  <div style="display:flex;align-items:center;gap:20px;padding:0 40px;height:60px;border-bottom:1px solid #E3E7EF;background:#fff">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:26px;height:26px;border-radius:6px;background:#0D1B3E;color:#fff;display:grid;place-items:center;font:800 13px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 15px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Bundle: <span style="color:#1A56DB">Connected Operations</span> — pricing &amp; split</div></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:12px"><div style="border:1px solid #E3E7EF;background:#fff;color:#0D1B3E;font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:8px">← Structure</div><div style="background:#1A56DB;color:#fff;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:8px">Continue to terms →</div></div>
+  </div>
+  <div style="background:#F6F7FA;padding:26px 36px 40px">
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <!-- price build -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:22px 24px">
+          <div style="font-size:14px;font-weight:700;color:#0D1B3E;margin-bottom:14px">Bundle price build <span style="font-weight:500;color:#8A92A6">· typical config: 1 site, 40 SIMs</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:9px 0;border-bottom:1px solid #EEF0F5;font-size:10.5px;font-weight:700;letter-spacing:.07em;color:#8A92A6"><span>COMPONENT</span><span>LIST</span><span>IN BUNDLE</span><span style="text-align:right">DELTA</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:13px 0;border-bottom:1px solid #EEF0F5;font-size:13px;align-items:center"><div style="display:flex;align-items:center;gap:9px"><span style="font-size:9.5px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:2px 7px;border-radius:4px">OPERATOR</span><b style="color:#0D1B3E">Private 5G Campus</b></div><span style="color:#8A92A6">€3,220.00</span><div style="border:1px solid #C9CFDC;border-radius:7px;padding:5px 10px;font-weight:700;color:#0D1B3E;justify-self:start">€3,124.00</div><span style="text-align:right;color:#0FA968;font-weight:600">−3.0%</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:13px 0;border-bottom:1px solid #EEF0F5;font-size:13px;align-items:center"><div style="display:flex;align-items:center;gap:9px"><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:4px">TRACKWISE</span><b style="color:#0D1B3E">Fleet IoT Connect</b></div><span style="color:#8A92A6">€128.00</span><div style="border:1px solid #C9CFDC;border-radius:7px;padding:5px 10px;font-weight:700;color:#0D1B3E;justify-self:start">€121.60</div><span style="text-align:right;color:#0FA968;font-weight:600">−5.0%</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:13px 0;font-size:13px;align-items:center;opacity:.7"><div style="display:flex;align-items:center;gap:9px"><span style="font-size:9.5px;font-weight:700;color:#6D28D9;background:#F1EAFE;padding:2px 7px;border-radius:4px">EDGECORE</span><b style="color:#0D1B3E">Edge Compute (optional)</b></div><span style="color:#8A92A6">€640.00</span><div style="border:1px solid #E3E7EF;border-radius:7px;padding:5px 10px;font-weight:700;color:#8A92A6;justify-self:start">list price</div><span style="text-align:right;color:#8A92A6">0%</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #EEF0F5;margin-top:6px;padding-top:14px">
+            <div style="font-size:12.5px;color:#5A6478">Discount funding: <b style="color:#0D1B3E">Northlink −€96</b> · <b style="color:#0D1B3E">Trackwise −€6.40</b> (per its co-sell terms, max 5%)</div>
+            <div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:12px;color:#8A92A6">Bundle total</span><span style="font:800 22px 'Schibsted Grotesk',sans-serif;color:#1A56DB">€3,572<span style="font:500 12px 'Instrument Sans',sans-serif;color:#8A92A6">/mo</span></span></div>
+          </div>
+        </div>
+        <!-- floor guard -->
+        <div style="background:#FFF9EC;border:1px solid #F3E3B8;border-radius:12px;padding:13px 18px;display:flex;gap:11px;font-size:12.5px;line-height:1.5;color:#5A4A1A">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2.2" style="flex:none;margin-top:2px"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"></path></svg>
+          <span><b>Floor guard:</b> Trackwise's resale agreement caps its component discount at 5% — you're at the limit. Any deeper bundle discount must be funded from the Northlink component.</span>
+        </div>
+        <!-- revenue split -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:22px 24px">
+          <div style="font-size:14px;font-weight:700;color:#0D1B3E;margin-bottom:4px">Revenue split per sale <span style="font-weight:500;color:#8A92A6">· what settlement will show</span></div>
+          <div style="font-size:12px;color:#8A92A6;margin-bottom:14px">These exact numbers appear on each partner's monthly statement — no surprises at settlement time.</div>
+          <div style="display:flex;height:34px;border-radius:9px;overflow:hidden;font-size:11px;font-weight:700;color:#fff;margin-bottom:12px">
+            <div style="width:76%;background:#0D1B3E;display:flex;align-items:center;padding-left:14px">NORTHLINK €2,714.80</div>
+            <div style="width:21%;background:#6D28D9;display:flex;align-items:center;padding-left:12px">TRACKWISE €751.39</div>
+            <div style="width:3%;background:#5B8EF2" title="platform fee"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:12.5px;color:#3A4358">
+            <div style="display:flex;justify-content:space-between"><span><b style="color:#0D1B3E">Northlink</b> — Private 5G revenue + 13% share on partner component</span><b>€2,714.80/mo</b></div>
+            <div style="display:flex;justify-content:space-between"><span><b style="color:#0D1B3E">Trackwise</b> — Fleet IoT net of 13% share (87/13 per AGR-0042)</span><b>€751.39/mo</b></div>
+            <div style="display:flex;justify-content:space-between;color:#8A92A6"><span>DBP platform fee (2.9% of partner GMV)</span><span>€105.81/mo</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- right rail -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:12px">PRICE POSITIONING</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:12.5px;color:#3A4358">
+            <div style="display:flex;justify-content:space-between"><span>vs. buying separately</span><b style="color:#0FA968">−3.8%</b></div>
+            <div style="display:flex;justify-content:space-between"><span>Northlink blended margin</span><b>31.4%</b></div>
+            <div style="display:flex;justify-content:space-between"><span>Payback on discount</span><b>4.1 months</b></div>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:12px">CHARGE TYPES</div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:12.5px;color:#3A4358">
+            <div style="display:flex;justify-content:space-between"><span>Recurring (monthly)</span><b>€3,572.00</b></div>
+            <div style="display:flex;justify-content:space-between"><span>One-time (setup, HW)</span><b>pass-through</b></div>
+            <div style="display:flex;justify-content:space-between"><span>Usage overage</span><b>component rates</b></div>
+          </div>
+        </div>
+        <div style="background:#F3F6FE;border:1px solid #D8E2FA;border-radius:11px;padding:13px 15px;font-size:12px;line-height:1.5;color:#3A4358"><b>Guru:</b> similar bundles priced at −3 to −5% see 2.3× the attach rate of unpriced bundles; below −8% margin erosion outweighs uptake.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ============ 1e LIFECYCLE & PUBLISH ============ -->
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Version, approve &amp; publish — checklist, channels, partner consent</div>
+<div class="dv-card" style="width:1280px">
+  <div style="display:flex;align-items:center;gap:20px;padding:0 40px;height:60px;border-bottom:1px solid #E3E7EF;background:#fff">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:26px;height:26px;border-radius:6px;background:#0D1B3E;color:#fff;display:grid;place-items:center;font:800 13px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 15px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Bundle: <span style="color:#1A56DB">Connected Operations</span> — review &amp; publish</div></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:12px"><div style="border:1px solid #E3E7EF;background:#fff;color:#0D1B3E;font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:8px">← Terms</div><div style="background:#1A56DB;color:#fff;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:8px">Submit for approval</div></div>
+  </div>
+  <div style="background:#F6F7FA;padding:26px 36px 40px">
+    <div style="display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <!-- readiness checklist -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:22px 24px">
+          <div style="font-size:14px;font-weight:700;color:#0D1B3E;margin-bottom:14px">Publish readiness</div>
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid #EEF0F5"><div style="width:20px;height:20px;border-radius:99px;background:#0FA968;display:grid;place-items:center;flex:none"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div><div style="flex:1;font-size:13px;color:#3A4358">Structure valid — 2 mandatory + 1 optional, no circular refs (TMF620 check)</div></div>
+            <div style="display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid #EEF0F5"><div style="width:20px;height:20px;border-radius:99px;background:#0FA968;display:grid;place-items:center;flex:none"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div><div style="flex:1;font-size:13px;color:#3A4358">Pricing within all partner floors · discount funding agreed</div></div>
+            <div style="display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid #EEF0F5"><div style="width:20px;height:20px;border-radius:99px;background:#0FA968;display:grid;place-items:center;flex:none"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div><div style="flex:1;font-size:13px;color:#3A4358"><b style="color:#0D1B3E">Trackwise co-sell consent</b> — accepted 2 Jul 14:36 (auto-request via Partner Hub)</div></div>
+            <div style="display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid #EEF0F5;background:#FFFDF6"><div style="width:20px;height:20px;border-radius:99px;background:#E8A23F;display:grid;place-items:center;flex:none;font:800 12px sans-serif;color:#fff">!</div><div style="flex:1"><div style="font-size:13px;font-weight:700;color:#0D1B3E">Marketing copy — DE translation missing</div><div style="font-size:11.5px;color:#8A92A6">EN done · shopfront serves EN fallback until added</div></div><span style="font-size:11.5px;font-weight:600;color:#1A56DB">Add translation</span></div>
+            <div style="display:flex;align-items:center;gap:13px;padding:11px 0"><div style="width:20px;height:20px;border-radius:99px;background:#0FA968;display:grid;place-items:center;flex:none"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div><div style="flex:1;font-size:13px;color:#3A4358">Contract terms — MSA + Trackwise partner terms attached, 36-mo, 90-day notice</div></div>
+          </div>
+        </div>
+        <!-- channels -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:22px 24px">
+          <div style="font-size:14px;font-weight:700;color:#0D1B3E;margin-bottom:14px">Publish to channels</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div style="border:2px solid #1A56DB;background:#F7FAFF;border-radius:10px;padding:14px 16px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><b style="font-size:13px;color:#0D1B3E">Marketplace</b><div style="width:16px;height:16px;border-radius:4px;background:#1A56DB;display:grid;place-items:center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div></div><div style="font-size:11.5px;color:#8A92A6">Northlink Business shopfront</div></div>
+            <div style="border:2px solid #1A56DB;background:#F7FAFF;border-radius:10px;padding:14px 16px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><b style="font-size:13px;color:#0D1B3E">Channel partners</b><div style="width:16px;height:16px;border-radius:4px;background:#1A56DB;display:grid;place-items:center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div></div><div style="font-size:11.5px;color:#8A92A6">12 resellers incl. Bergnet · wholesale −15%</div></div>
+            <div style="border:1.5px solid #E3E7EF;border-radius:10px;padding:14px 16px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><b style="font-size:13px;color:#0D1B3E">Assisted sales</b><div style="width:16px;height:16px;border-radius:4px;border:1.5px solid #C9CFDC"></div></div><div style="font-size:11.5px;color:#8A92A6">CSR / enterprise quote tool only</div></div>
+          </div>
+          <div style="font-size:12px;color:#8A92A6;margin-top:12px">Effective from <b style="color:#0D1B3E">15 Jul 2026</b> · no end date · v1.0 supersedes nothing (new offer)</div>
+        </div>
+      </div>
+      <!-- version & approval rail -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:14px">APPROVAL FLOW</div>
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;gap:12px;align-items:center;padding:8px 0"><div style="width:22px;height:22px;border-radius:99px;background:#0FA968;display:grid;place-items:center;flex:none"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M4 12l5 5L20 7"></path></svg></div><div><div style="font-size:12.5px;font-weight:600;color:#0D1B3E">Draft — Sofia Renner</div><div style="font-size:10.5px;color:#8A92A6">you, today</div></div></div>
+            <div style="width:2px;height:12px;background:#DFE3EC;margin-left:10px"></div>
+            <div style="display:flex;gap:12px;align-items:center;padding:8px 0"><div style="width:22px;height:22px;border-radius:99px;background:#1A56DB;display:grid;place-items:center;flex:none;box-shadow:0 0 0 4px #EAF0FE"><div style="width:6px;height:6px;border-radius:99px;background:#fff"></div></div><div><div style="font-size:12.5px;font-weight:700;color:#1A56DB">Commercial review</div><div style="font-size:10.5px;color:#8A92A6">head of B2B products · SLA 2 days</div></div></div>
+            <div style="width:2px;height:12px;background:#DFE3EC;margin-left:10px"></div>
+            <div style="display:flex;gap:12px;align-items:center;padding:8px 0;opacity:.5"><div style="width:22px;height:22px;border-radius:99px;border:2px solid #E3E7EF;flex:none"></div><div style="font-size:12.5px;font-weight:600;color:#3A4358">Publish to catalog (TMF620)</div></div>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:12px">VERSION HISTORY</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:12.5px;color:#3A4358">
+            <div style="display:flex;justify-content:space-between"><span><b style="color:#0D1B3E">v1.0</b> · this draft</span><span style="font-size:10px;font-weight:700;color:#5A6478;background:#EEF0F5;padding:2px 8px;border-radius:99px">DRAFT</span></div>
+            <div style="font-size:11.5px;color:#8A92A6;line-height:1.6">Future versions keep existing customers on their contracted version; migrations are explicit, never silent.</div>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#8A92A6;margin-bottom:10px">PREVIEW</div>
+          <div style="font-size:12.5px;line-height:1.55;color:#3A4358">See exactly what buyers will see before you submit.</div>
+          <div style="border:1px solid #E3E7EF;text-align:center;font-size:12.5px;font-weight:600;color:#0D1B3E;padding:10px;border-radius:8px;margin-top:12px">Preview in shopfront</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ 1f OFFER ANALYTICS ============ -->
+<div class="dv-opt" id="1f">
+<div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Offer analytics — uptake, attach &amp; funnel for a published bundle (SME Kickstart)</div>
+<div class="dv-card" style="width:1280px">
+<div style="display:grid;grid-template-columns:222px 1fr;min-height:620px">
+  <!-- sidebar -->
+  <div style="background:#0A1633;padding:22px 16px;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 22px"><div style="width:26px;height:26px;border-radius:6px;background:#fff;color:#0D1B3E;display:grid;place-items:center;font:800 13px 'Schibsted Grotesk',sans-serif">N</div><div style="font:700 14px 'Schibsted Grotesk',sans-serif;color:#fff">Catalog Studio</div></div>
+    <div style="display:flex;flex-direction:column;gap:2px;font-size:13px;font-weight:500;color:#AAB6D4">
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M21 16V8l-9-5-9 5v8l9 5z"></path><path d="M3.3 7.5L12 12l8.7-4.5M12 22V12"></path></svg>Offers &amp; bundles</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>Product specs</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>Pricing rules</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M9 11l3 3 8-8"></path><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"></path></svg>Approvals</div>
+      <div style="display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.1);color:#fff;font-weight:600;border-radius:8px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 20h18M6 16v-5M11 16V7M16 16v-8M21 16V4"></path></svg>Offer analytics</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:9px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AAB6D4" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"></path><circle cx="9" cy="7" r="4"></circle></svg>Partners</div>
+    </div>
+    <div style="margin-top:auto;border-top:1px solid rgba(255,255,255,.12);padding-top:14px;display:flex;align-items:center;gap:10px;padding-left:8px"><div style="width:30px;height:30px;border-radius:99px;background:#EAF0FE;color:#1A56DB;display:grid;place-items:center;font:700 11px sans-serif">SR</div><div><div style="font-size:12.5px;font-weight:600;color:#fff">Sofia Renner</div><div style="font-size:10.5px;color:#7E8CB0">Product manager</div></div></div>
+  </div>
+  <!-- main -->
+  <div style="background:#F6F7FA">
+    <div style="display:flex;align-items:center;gap:16px;padding:0 32px;height:60px;border-bottom:1px solid #E3E7EF;background:#fff">
+      <div style="font:700 16px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">Offer analytics <span style="font-weight:500;color:#8A92A6">· SME Kickstart v2.3</span></div>
+      <div style="margin-left:auto;display:flex;gap:8px;font-size:12px;font-weight:600"><span style="border:1px solid #E3E7EF;background:#fff;color:#3A4358;border-radius:8px;padding:8px 13px">Last 6 months ▾</span><span style="border:1px solid #E3E7EF;background:#fff;color:#3A4358;border-radius:8px;padding:8px 13px">All channels ▾</span></div>
+    </div>
+    <div style="padding:26px 32px">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px">
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px"><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#8A92A6;margin-bottom:8px">ACTIVE SUBSCRIPTIONS</div><div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">1,134</div><div style="font-size:11.5px;color:#0FA968;font-weight:600;margin-top:3px">+9.8% vs May</div></div>
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px"><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#8A92A6;margin-bottom:8px">MRR</div><div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">€214k</div><div style="font-size:11.5px;color:#5A6478;margin-top:3px">Northlink share €148k</div></div>
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px"><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#8A92A6;margin-bottom:8px">CONFIG → ORDER</div><div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">38%</div><div style="font-size:11.5px;color:#B45309;font-weight:600;margin-top:3px">▼ 4pts — see funnel</div></div>
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:18px 20px"><div style="font-size:11px;font-weight:700;letter-spacing:.07em;color:#8A92A6;margin-bottom:8px">90-DAY CHURN</div><div style="font:800 26px 'Schibsted Grotesk',sans-serif;color:#0D1B3E">1.9%</div><div style="font-size:11.5px;color:#0FA968;font-weight:600;margin-top:3px">best in portfolio</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:16px">
+        <!-- funnel -->
+        <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:22px 24px">
+          <div style="font-size:14px;font-weight:700;color:#0D1B3E;margin-bottom:16px">Buy funnel — June</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;color:#3A4358">
+            <div style="display:grid;grid-template-columns:150px 1fr 80px;gap:14px;align-items:center"><span>Offer views</span><div style="height:22px;border-radius:6px;background:#EEF0F5;overflow:hidden"><div style="width:100%;height:100%;background:#0D1B3E;border-radius:6px"></div></div><b style="text-align:right;color:#0D1B3E">4,820</b></div>
+            <div style="display:grid;grid-template-columns:150px 1fr 80px;gap:14px;align-items:center"><span>Config started</span><div style="height:22px;border-radius:6px;background:#EEF0F5;overflow:hidden"><div style="width:46%;height:100%;background:#1A56DB;border-radius:6px"></div></div><b style="text-align:right;color:#0D1B3E">2,218</b></div>
+            <div style="display:grid;grid-template-columns:150px 1fr 80px;gap:14px;align-items:center"><span>Config completed</span><div style="height:22px;border-radius:6px;background:#EEF0F5;overflow:hidden"><div style="width:24%;height:100%;background:#5B8EF2;border-radius:6px"></div></div><b style="text-align:right;color:#0D1B3E">1,141</b></div>
+            <div style="display:grid;grid-template-columns:150px 1fr 80px;gap:14px;align-items:center"><span>Orders placed</span><div style="height:22px;border-radius:6px;background:#EEF0F5;overflow:hidden"><div style="width:18%;height:100%;background:#0FA968;border-radius:6px"></div></div><b style="text-align:right;color:#0D1B3E">864</b></div>
+          </div>
+          <div style="background:#F3F6FE;border:1px solid #D8E2FA;border-radius:11px;padding:12px 15px;font-size:12px;line-height:1.5;color:#3A4358;margin-top:16px"><b>Guru:</b> the 4-pt drop is at the <b>laptop-selection step</b> — 61% of abandoners stall there. The device partner added 14 models in June; consider curating to 4 recommended configs.</div>
+        </div>
+        <!-- component & channel mix -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+            <div style="font-size:14px;font-weight:700;color:#0D1B3E;margin-bottom:14px">Attach rate — optional components</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;color:#3A4358">
+              <div style="display:grid;grid-template-columns:130px 1fr 46px;gap:12px;align-items:center"><span>Microsoft 365 E3</span><div style="height:12px;border-radius:99px;background:#EEF0F5;overflow:hidden"><div style="width:88%;height:100%;background:#1A56DB;border-radius:99px"></div></div><b style="text-align:right">88%</b></div>
+              <div style="display:grid;grid-template-columns:130px 1fr 46px;gap:12px;align-items:center"><span>Managed laptops</span><div style="height:12px;border-radius:99px;background:#EEF0F5;overflow:hidden"><div style="width:64%;height:100%;background:#5B8EF2;border-radius:99px"></div></div><b style="text-align:right">64%</b></div>
+              <div style="display:grid;grid-template-columns:130px 1fr 46px;gap:12px;align-items:center"><span>Security add-on</span><div style="height:12px;border-radius:99px;background:#EEF0F5;overflow:hidden"><div style="width:31%;height:100%;background:#9FC0FF;border-radius:99px"></div></div><b style="text-align:right">31%</b></div>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:20px 22px">
+            <div style="font-size:14px;font-weight:700;color:#0D1B3E;margin-bottom:14px">Sales by channel</div>
+            <div style="display:flex;height:30px;border-radius:8px;overflow:hidden;font-size:10.5px;font-weight:700;color:#fff;margin-bottom:10px">
+              <div style="width:58%;background:#0D1B3E;display:flex;align-items:center;padding-left:12px">MARKETPLACE 58%</div>
+              <div style="width:29%;background:#1A56DB;display:flex;align-items:center;padding-left:10px">RESELLERS 29%</div>
+              <div style="width:13%;background:#5B8EF2;display:flex;align-items:center;padding-left:8px">CSR</div>
+            </div>
+            <div style="font-size:11.5px;color:#8A92A6">Bergnet is the top reseller — 41% of channel volume</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<p class="dv-next">Try next: "wire this as Act 4" · "structure &amp; rules step of the wizard" · "approvals queue (the reviewer's side)".</p>
+</section>
+
+</x-dc>
+</body>
+</html>

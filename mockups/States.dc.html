@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#eceef2;font-family:'Instrument Sans',system-ui,sans-serif}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+.sk{background:linear-gradient(90deg,#EDF0F5 25%,#F7F9FC 50%,#EDF0F5 75%);background-size:800px 100%;animation:shimmer 1.4s linear infinite;border-radius:6px}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Component states — empty / loading / error / success across the shared components (Shopfront + Partner Hub)</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>States board — one row per component, one column per state</div>
+<div class="dv-card" style="width:1380px;padding:28px 30px">
+
+  <!-- column headers -->
+  <div style="display:grid;grid-template-columns:150px repeat(4,1fr);gap:16px;margin-bottom:14px">
+    <div></div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#8A92A6">LOADING</div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#8A92A6">EMPTY</div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#8A92A6">ERROR</div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#8A92A6">SUCCESS / LOADED</div>
+  </div>
+
+  <!-- ROW: solution card -->
+  <div style="display:grid;grid-template-columns:150px repeat(4,1fr);gap:16px;align-items:stretch;padding:14px 0;border-top:1px solid #EEF0F5">
+    <div style="font-size:12.5px;font-weight:700;color:#0D1B3E;padding-top:6px">Solution card<div style="font-size:11px;font-weight:500;color:#8A92A6;margin-top:3px">catalog grid</div></div>
+    <!-- loading -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;padding:16px">
+      <div class="sk" style="width:80px;height:16px;margin-bottom:12px"></div>
+      <div class="sk" style="width:70%;height:14px;margin-bottom:8px"></div>
+      <div class="sk" style="width:100%;height:10px;margin-bottom:5px"></div>
+      <div class="sk" style="width:85%;height:10px;margin-bottom:14px"></div>
+      <div style="border-top:1px solid #EEF0F5;padding-top:11px;display:flex;justify-content:space-between"><div class="sk" style="width:60px;height:14px"></div><div class="sk" style="width:70px;height:14px"></div></div>
+    </div>
+    <!-- empty -->
+    <div style="border:1.5px dashed #D5DAE5;border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B4BAC8" stroke-width="1.8"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <div style="font-size:12.5px;font-weight:700;color:#0D1B3E">No solutions match</div>
+      <div style="font-size:11.5px;color:#8A92A6;line-height:1.5">Try removing a filter — or describe your need to Matchmaker.</div>
+      <div style="font-size:11.5px;font-weight:600;color:#1A56DB">Clear filters</div>
+    </div>
+    <!-- error -->
+    <div style="border:1px solid #F5CBC7;background:#FFFAF9;border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px">
+      <div style="width:30px;height:30px;border-radius:99px;background:#FBE1DF;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="2.4"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"></path></svg></div>
+      <div style="font-size:12.5px;font-weight:700;color:#B3261E">Couldn't load the catalog</div>
+      <div style="font-size:11.5px;color:#8A6B68;line-height:1.5">The catalog service didn't respond (TMF620 · 504).</div>
+      <div style="border:1px solid #E7B7B3;color:#B3261E;font-size:11.5px;font-weight:700;padding:6px 14px;border-radius:7px">Retry</div>
+    </div>
+    <!-- success -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;padding:16px">
+      <span style="font-size:10px;font-weight:700;color:#1A56DB;background:#EAF0FE;padding:3px 8px;border-radius:5px">OPERATOR</span>
+      <div style="font:700 14px 'Schibsted Grotesk',sans-serif;color:#0D1B3E;margin:10px 0 4px">SD-WAN Branch Connect</div>
+      <div style="font-size:11.5px;line-height:1.5;color:#5A6478;margin-bottom:12px">Zero-touch managed SD-WAN with fibre or 5G access per branch.</div>
+      <div style="border-top:1px solid #EEF0F5;padding-top:10px;display:flex;justify-content:space-between;align-items:baseline"><div><span style="font-size:10.5px;color:#8A92A6">from </span><b style="font-size:13.5px;color:#0D1B3E">€120</b><span style="font-size:10.5px;color:#8A92A6">/site/mo</span></div><span style="font-size:11.5px;font-weight:600;color:#1A56DB">Configure →</span></div>
+    </div>
+  </div>
+
+  <!-- ROW: data table -->
+  <div style="display:grid;grid-template-columns:150px repeat(4,1fr);gap:16px;align-items:stretch;padding:14px 0;border-top:1px solid #EEF0F5">
+    <div style="font-size:12.5px;font-weight:700;color:#0D1B3E;padding-top:6px">Data table<div style="font-size:11px;font-weight:500;color:#8A92A6;margin-top:3px">orders, products, statements</div></div>
+    <!-- loading -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFD;border-bottom:1px solid #EEF0F5;display:flex;gap:18px"><div class="sk" style="width:60px;height:9px"></div><div class="sk" style="width:40px;height:9px"></div><div class="sk" style="width:50px;height:9px"></div></div>
+      <div style="padding:11px 14px;border-bottom:1px solid #EEF0F5;display:flex;gap:18px;align-items:center"><div class="sk" style="width:110px;height:12px"></div><div class="sk" style="width:50px;height:12px"></div><div class="sk" style="width:64px;height:16px;border-radius:99px"></div></div>
+      <div style="padding:11px 14px;border-bottom:1px solid #EEF0F5;display:flex;gap:18px;align-items:center"><div class="sk" style="width:90px;height:12px"></div><div class="sk" style="width:58px;height:12px"></div><div class="sk" style="width:64px;height:16px;border-radius:99px"></div></div>
+      <div style="padding:11px 14px;display:flex;gap:18px;align-items:center"><div class="sk" style="width:120px;height:12px"></div><div class="sk" style="width:44px;height:12px"></div><div class="sk" style="width:64px;height:16px;border-radius:99px"></div></div>
+    </div>
+    <!-- empty -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:16px">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B4BAC8" stroke-width="1.8"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect></svg>
+      <div style="font-size:12.5px;font-weight:700;color:#0D1B3E">No orders yet</div>
+      <div style="font-size:11.5px;color:#8A92A6;line-height:1.5">When a customer orders one of your products, it appears here with its fulfillment tasks.</div>
+      <div style="font-size:11.5px;font-weight:600;color:#1A56DB">How fulfillment works →</div>
+    </div>
+    <!-- error -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="padding:9px 14px;background:#FAFBFD;border-bottom:1px solid #EEF0F5;font-size:9.5px;font-weight:700;letter-spacing:.07em;color:#8A92A6">PRODUCT · PRICE · LIFECYCLE</div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:14px;text-align:center">
+        <div style="font-size:12px;font-weight:700;color:#B3261E">Rows failed to load</div>
+        <div style="font-size:11.5px;color:#8A6B68">Your session may have expired.</div>
+        <div style="display:flex;gap:8px"><span style="border:1px solid #E7B7B3;color:#B3261E;font-size:11px;font-weight:700;padding:5px 12px;border-radius:7px">Retry</span><span style="border:1px solid #E3E7EF;color:#3A4358;font-size:11px;font-weight:600;padding:5px 12px;border-radius:7px">Sign in again</span></div>
+      </div>
+    </div>
+    <!-- success -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFD;border-bottom:1px solid #EEF0F5;font-size:9.5px;font-weight:700;letter-spacing:.07em;color:#8A92A6;display:grid;grid-template-columns:1.6fr 1fr 1fr"><span>ORDER</span><span>VALUE</span><span>STATUS</span></div>
+      <div style="padding:11px 14px;border-bottom:1px solid #EEF0F5;font-size:11.5px;display:grid;grid-template-columns:1.6fr 1fr 1fr;align-items:center"><b style="color:#0D1B3E">PO-88412</b><span style="color:#3A4358">€2,860</span><span style="font-size:9.5px;font-weight:700;color:#B45309;background:#FEF3E2;padding:2px 7px;border-radius:99px;justify-self:start">FULFILLING</span></div>
+      <div style="padding:11px 14px;border-bottom:1px solid #EEF0F5;font-size:11.5px;display:grid;grid-template-columns:1.6fr 1fr 1fr;align-items:center"><b style="color:#0D1B3E">PO-88405</b><span style="color:#3A4358">€1,240</span><span style="font-size:9.5px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:2px 7px;border-radius:99px;justify-self:start">ACTIVE</span></div>
+      <div style="padding:11px 14px;font-size:11.5px;display:grid;grid-template-columns:1.6fr 1fr 1fr;align-items:center"><b style="color:#0D1B3E">PO-88397</b><span style="color:#3A4358">€386</span><span style="font-size:9.5px;font-weight:700;color:#0FA968;background:#E7F7EF;padding:2px 7px;border-radius:99px;justify-self:start">ACTIVE</span></div>
+    </div>
+  </div>
+
+  <!-- ROW: form field -->
+  <div style="display:grid;grid-template-columns:150px repeat(4,1fr);gap:16px;align-items:stretch;padding:14px 0;border-top:1px solid #EEF0F5">
+    <div style="font-size:12.5px;font-weight:700;color:#0D1B3E;padding-top:6px">Form input<div style="font-size:11px;font-weight:500;color:#8A92A6;margin-top:3px">configurator, checkout, onboarding</div></div>
+    <!-- loading = disabled/validating -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:center;gap:6px">
+      <div style="font-size:11px;font-weight:600;color:#3A4358">VAT ID</div>
+      <div style="border:1px solid #C9CFDC;border-radius:8px;padding:9px 12px;font-size:12.5px;color:#8A92A6;background:#F7F8FB;display:flex;justify-content:space-between;align-items:center">ATU 7011 2245 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1A56DB" stroke-width="2.6" style="animation:shimmer 1s linear infinite"><path d="M21 12a9 9 0 11-6.2-8.6"></path></svg></div>
+      <div style="font-size:10.5px;color:#8A92A6">Validating against VIES…</div>
+    </div>
+    <!-- empty = default -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:center;gap:6px">
+      <div style="font-size:11px;font-weight:600;color:#3A4358">VAT ID</div>
+      <div style="border:1px solid #C9CFDC;border-radius:8px;padding:9px 12px;font-size:12.5px;color:#B4BAC8">e.g. ATU 1234 5678</div>
+      <div style="font-size:10.5px;color:#8A92A6">Required for invoicing in the EU</div>
+    </div>
+    <!-- error -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:center;gap:6px">
+      <div style="font-size:11px;font-weight:600;color:#3A4358">VAT ID</div>
+      <div style="border:1.5px solid #B3261E;box-shadow:0 0 0 3px #FBE1DF;border-radius:8px;padding:9px 12px;font-size:12.5px;color:#0D1B3E">ATU 70</div>
+      <div style="font-size:10.5px;color:#B3261E;font-weight:600;display:flex;align-items:center;gap:5px"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="3"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5h.01"></path></svg>Too short — Austrian VAT IDs have 8 characters after "ATU".</div>
+    </div>
+    <!-- success -->
+    <div style="border:1px solid #E3E7EF;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:center;gap:6px">
+      <div style="font-size:11px;font-weight:600;color:#3A4358">VAT ID</div>
+      <div style="border:1.5px solid #0FA968;border-radius:8px;padding:9px 12px;font-size:12.5px;color:#0D1B3E;display:flex;justify-content:space-between;align-items:center">ATU 7011 2245 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0FA968" stroke-width="3"><path d="M4 12l5 5L20 7"></path></svg></div>
+      <div style="font-size:10.5px;color:#0FA968;font-weight:600">Verified · Trackwise Solutions GmbH</div>
+    </div>
+  </div>
+
+  <!-- ROW: AI panel -->
+  <div style="display:grid;grid-template-columns:150px repeat(4,1fr);gap:16px;align-items:stretch;padding:14px 0 4px;border-top:1px solid #EEF0F5">
+    <div style="font-size:12.5px;font-weight:700;color:#0D1B3E;padding-top:6px">Wave AI panel<div style="font-size:11px;font-weight:500;color:#8A92A6;margin-top:3px">Matchmaker, Config Guide, alerts</div></div>
+    <!-- loading = thinking -->
+    <div style="background:#F3F6FE;border:1px solid #D8E2FA;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;justify-content:center">
+      <div style="display:flex;align-items:center;gap:7px"><svg width="12" height="12" viewBox="0 0 24 24" fill="#1A56DB"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg><div style="font-size:10.5px;font-weight:700;color:#0D1B3E">CONFIGURATION GUIDE</div></div>
+      <div class="sk" style="width:90%;height:10px"></div>
+      <div class="sk" style="width:75%;height:10px"></div>
+      <div style="font-size:10.5px;color:#8A92A6">Checking your site plan…</div>
+    </div>
+    <!-- empty = invitation -->
+    <div style="background:#F3F6FE;border:1px solid #D8E2FA;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;justify-content:center">
+      <div style="display:flex;align-items:center;gap:7px"><svg width="12" height="12" viewBox="0 0 24 24" fill="#1A56DB"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg><div style="font-size:10.5px;font-weight:700;color:#0D1B3E">CONFIGURATION GUIDE</div></div>
+      <div style="font-size:11.5px;line-height:1.5;color:#3A4358">No suggestions yet — I'll speak up when your choices affect price, capacity or timeline.</div>
+      <div style="background:#fff;border:1px solid #D8E2FA;border-radius:8px;padding:8px 10px;font-size:11px;color:#8A92A6">Ask anything…</div>
+    </div>
+    <!-- error = degraded -->
+    <div style="background:#F7F8FB;border:1px solid #E3E7EF;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;justify-content:center">
+      <div style="display:flex;align-items:center;gap:7px"><svg width="12" height="12" viewBox="0 0 24 24" fill="#8A92A6"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg><div style="font-size:10.5px;font-weight:700;color:#5A6478">CONFIGURATION GUIDE</div><span style="margin-left:auto;font-size:9.5px;font-weight:700;color:#976A0F;background:#FDF2D9;padding:2px 7px;border-radius:99px">UNAVAILABLE</span></div>
+      <div style="font-size:11.5px;line-height:1.5;color:#5A6478">The assistant is temporarily offline. <b>Everything still works</b> — configure manually or check the sizing guide.</div>
+      <div style="font-size:11px;font-weight:600;color:#1A56DB">Open sizing guide →</div>
+    </div>
+    <!-- success = suggestion -->
+    <div style="background:#F3F6FE;border:1px solid #D8E2FA;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;justify-content:center">
+      <div style="display:flex;align-items:center;gap:7px"><svg width="12" height="12" viewBox="0 0 24 24" fill="#1A56DB"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.9-5.6-4.2-5.6 4.2 2.2-6.9L3 8.8h6.8z"></path></svg><div style="font-size:10.5px;font-weight:700;color:#0D1B3E">CONFIGURATION GUIDE</div></div>
+      <div style="font-size:11.5px;line-height:1.5;color:#3A4358">For 250 devices, <b>High throughput</b> fits — Ultra is only needed above 12 video streams per cell.</div>
+      <div style="display:flex;gap:6px"><span style="background:#1A56DB;color:#fff;font-size:10.5px;font-weight:600;padding:5px 10px;border-radius:6px">Apply</span><span style="border:1px solid #D8E2FA;color:#1A56DB;font-size:10.5px;font-weight:600;padding:5px 10px;border-radius:6px">Why?</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #EEF0F5;margin-top:14px;padding-top:14px;font-size:11.5px;color:#8A92A6;line-height:1.6">
+    Rules: skeletons mirror the loaded layout (no spinners on content surfaces) · empty states always say <b>why</b> it's empty and give one next action · errors name the failing service, never blame the user, and always offer retry · AI surfaces degrade gracefully — the manual path is never blocked.
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">These states apply to both surfaces — say "apply the skeletons to the Shopfront catalog" or "show a full-page error/maintenance screen".</p>
+</section>
+
+</x-dc>
+</body>
+</html>
